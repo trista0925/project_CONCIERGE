@@ -1,0 +1,407 @@
+/* all page ===================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Righteous', 'Noto Sans TC', sans-serif;
+}
+
+html,
+body {
+    height: 100%;
+}
+
+body {
+    letter-spacing: 0.05rem;
+    font-size: 0.95rem;
+    line-height: 30px;
+    color: #222222;
+    background-color: #FFFFFF;
+    overflow-x: hidden;
+}
+
+a {
+    text-decoration: none;
+    color: #333333;
+    cursor: pointer;
+}
+
+ul,
+ol,
+li {
+    list-style: none;
+}
+
+.v-center {
+    display: flex;
+    vertical-align: middle;
+    align-items: center;
+}
+
+.no-any-pd {
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+}
+
+
+/* 區塊padding調整 */
+
+.pd-top {
+    padding-top: 40px;
+}
+
+.pd-bottom {
+    padding-bottom: 40px;
+}
+
+
+/* 區塊padding調整(加大) */
+
+.pd-top-lg {
+    padding-top: 80px;
+}
+
+.pd-bottom-lg {
+    padding-bottom: 80px;
+}
+
+
+/* 首頁區塊大標(白底) */
+
+h1 {
+    color: #005F69;
+    font-size: 1.5rem;
+    font-weight: bold;
+    line-height: 32px;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+
+/* 首頁區塊大標(藍底) */
+
+h2 {
+    color: #ECECEC;
+    font-size: 1.5rem;
+    font-weight: bold;
+    line-height: 32px;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+
+/* 首頁標題(白底)、合作商家、會員註冊 */
+
+h3 {
+    color: #005F69;
+    font-size: 1.2rem;
+    font-weight: bold;
+    line-height: 50px;
+    margin-bottom: 0px !important;
+    text-align: center;
+}
+
+
+/* 首頁標題(藍底) */
+
+h4 {
+    color: #ECECEC;
+    font-size: 1.2rem;
+    font-weight: bold;
+    line-height: 30px;
+    text-align: right;
+}
+
+@media screen and (max-width: 576px) {
+    h4 {
+        text-align: center;
+    }
+}
+
+p {
+    font-size: 0.9rem;
+}
+
+
+/* 有底色的內文文字 */
+
+.text-white {
+    color: #ECECEC;
+    line-height: 30px;
+}
+
+
+/* 文字置中 */
+
+.textCen {
+    text-align: center;
+}
+
+
+/* 分隔線 */
+
+hr {
+    border-top: 1px solid #c1c1c1;
+    padding-bottom: 10px;
+}
+
+
+/* header ===================================== */
+
+@media screen and (max-width: 576px) {
+    header>.container {
+        padding-top: 80px;
+    }
+}
+
+
+/* footer ===================================== */
+
+.footer-logo {
+    width: 40%
+}
+
+@media screen and (max-width: 576px) {
+    .footer-logo {
+        width: 80%
+    }
+}
+
+
+/* 首頁index ======================================== */
+
+
+/* 有底色的區塊 */
+
+.sec-bg-color {
+    background-color: #005F69;
+    height: auto;
+}
+
+
+/* 服務介紹步驟icon */
+
+.step-icon {
+    width: 10%;
+    display: block;
+    margin: auto;
+}
+
+
+/* 按鈕位置&樣式 */
+
+.btnset-index {
+    margin: -35px;
+}
+
+.btn-primary {
+    margin: 15px;
+    padding: 15px;
+    background-color: #005F69 !important;
+    border-color: #005F69 !important;
+}
+
+.btn-primary:hover,
+.btn-primary:focus,
+.btn-primary:active:hover {
+    background-color: #407b81 !important;
+    border-color: #407b81 !important;
+}
+
+
+/* 合作商家store ===================================== */
+
+.store {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.store h3 {
+    margin: 0px 15px;
+}
+
+.store:after {
+    content: '';
+    padding-top: 100px;
+}
+
+@media(min-width: 1025px) {
+    .storeinfo {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+}
+
+.storeinfo h3 {
+    display: inline;
+}
+
+
+/* 聯絡我們contact ===================================== */
+
+.contact-list {
+    padding-top: 100px;
+}
+
+@media screen and (max-width: 576px) {
+    .contact-list {
+        padding-top: 20px;
+    }
+}
+
+
+/* 常見問題qna ===================================== */
+
+.qna {
+    padding: 120px 80px 60px 80px;
+}
+
+@media screen and (max-width: 576px) {
+    .qna {
+        padding: 20px 0px 60px 0px;
+    }
+}
+
+.btn-link {
+    width: 100%;
+    height: 100%;
+    color: #005F69;
+    text-decoration: none;
+    text-align: left;
+    line-height: 2.2rem;
+}
+
+.btn-link:hover {
+    width: 100%;
+    height: 100%;
+    background-color: #005F69;
+    color: #ECECEC;
+    text-decoration: none;
+    text-align: left;
+}
+
+.card-header {
+    padding: 0px;
+}
+
+
+/* 登入/註冊register ======================================== */
+
+@media(min-width: 1025px) {
+    .register {
+        display: flex;
+    }
+    .register-leftpic {
+        width: 70%;
+        min-height: 100vh;
+        background-image: url(../images/Registered_left_footer.jpg);
+        background-size: cover;
+    }
+}
+
+.register-head {
+    width: 100%;
+    text-align: center;
+}
+
+.register-info {
+    height: 80px;
+    background-color: #005F69;
+}
+
+.register-info img {
+    height: 80px;
+    width: 120px;
+    max-width: 30%;
+}
+
+input {
+    width: 60%;
+    height: 30px;
+    border-radius: 10px;
+    padding: 10px;
+    margin: 10px auto;
+    border: #8b8b8b 1px solid;
+}
+
+.loginbtn,
+.Registerbtn {
+    display: block;
+    width: 100px;
+    height: 35px;
+    border-radius: 50px;
+    padding: 5px;
+    background-color: #005F69;
+    color: #fff;
+    font-size: 0.9rem;
+    letter-spacing: 5px;
+    text-indent: 5px;
+}
+
+.loginbtn,
+.Registerbtn:hover {
+    cursor: pointer;
+}
+
+.msg_mail {
+    position: relative;
+    top: -15px;
+    left: 25%;
+    height: 0px;
+    font-size: 0.65rem;
+    color: #00aabc;
+}
+
+.backbtn {
+    font-size: 0.8rem;
+}
+
+
+/* 會員首頁member_index ======================================== */
+
+.member-index {
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #005F69;
+    overflow: hidden;
+}
+
+.send-btn {
+    display: block;
+    text-align: center;
+    width: 80px;
+    height: 80px;
+    line-height: 80px;
+    background: #6db3ba;
+    font-size: 0.9rem;
+    color: #f5f5f5;
+    border: 2px solid #f5f5f5;
+    border-radius: 50%;
+}
+
+.send-btn:hover {
+    text-decoration: none;
+    color: #6db3ba;
+    background: #c3e5e8;
+}
+
+
+/* 填寫訂單order ======================================== */
+
+.sendbtn-order {
+    width: 160px;
+    height: 40px;
+    line-height: 40px;
+    border-radius: 50px;
+    background-color: #005F69;
+    color: #fff;
+    text-align: center;
+}

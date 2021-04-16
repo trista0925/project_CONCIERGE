@@ -1,0 +1,124 @@
+/*整體樣式*/
+
+* {
+    font-family: 'Righteous', 'Noto Sans TC', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+html,
+body {
+    height: 100%;
+}
+
+body {
+    background-color: #005F69;
+    color: #fff;
+    letter-spacing: 1px;
+    overflow: hidden;
+}
+
+#main {
+    background-color: #005F69;
+}
+
+a {
+    text-decoration: none;
+}
+
+ul,
+ol,
+li {
+    list-style-type: none;
+}
+
+
+/*section*/
+
+body>section {
+    min-height: 100%;
+    overflow: hidden;
+    position: relative;
+    padding: 10% 7%;
+}
+
+.container {
+    display: block;
+    text-align: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 2;
+}
+
+.logo img {
+    width: 350px;
+    height: auto;
+    margin-bottom: 30px;
+    margin-top: 100px;
+}
+
+.login {
+    display: block;
+    background-color: #fff;
+    width: 400px;
+    height: auto;
+    margin: auto;
+    padding: 20px;
+    border-radius: 10px;
+    border: #005F69;
+}
+
+#adminID {
+    width: 80%;
+    height: 30px;
+    border-radius: 10px;
+    margin: 5px;
+    padding: 5px;
+    border: 1px solid #8b8b8b;
+}
+
+#adminpw {
+    width: 80%;
+    height: 30px;
+    border-radius: 10px;
+    margin: 5px;
+    padding: 5px;
+    border: 1px solid #8b8b8b;
+}
+
+#loginbtn {
+    width: 30%;
+    height: 30px;
+    border-radius: 50px;
+    margin: 5px;
+    padding: 5px;
+    background-color: #005F69;
+    color: #fff;
+    border: #005F69;
+    right: 0;
+}
+
+@media screen and (max-width: 1366px) and (min-width: 1000px) {
+    /*section*/
+    body>section {
+        min-height: 100%;
+        overflow: hidden;
+        position: relative;
+        padding: 5% 7%;
+    }
+    .container {
+        display: block;
+        text-align: center;
+        max-width: 1000px;
+        margin: 0 auto;
+        position: relative;
+        z-index: 2;
+    }
+    .logo img {
+        width: 250px;
+        height: auto;
+        margin-bottom: 30px;
+        margin-top: 100px;
+    }
+}
