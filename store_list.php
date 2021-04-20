@@ -76,7 +76,7 @@ catch ( PDOException $e ){
   <meta charset="UTF-8">
   <link href="css/font-awesome-4.7.0/css/font-awesome.min.css" rel="stylesheet">
   <link href="css/store_list.css" rel="stylesheet">
-  <title>行動管理員後台 - 店家管理</title>
+  <title>行動管理員後台 CONCIERGE｜店家管理</title>
   <link rel="icon" href="LOGO/Concierge_icon.ico">
   <script src="js/jquery-3.5.1.min.js"></script>
 </head>

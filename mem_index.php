@@ -21,34 +21,41 @@ function errMsg($error) {
 }
 ?>
 <!DOCTYPE html>
-<html lang="zh-TW">
+<html lang="zh-Hant-TW">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes, minimum-scale=1.0, maximum-scale=3.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes, minimum-scale=1.0, maximum-scale=3.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <link href="css/concierge_index.css" rel="stylesheet">
-  <title>行動管理員後台</title>
+  <meta charset="UTF-8">
+  <title>行動管理員後台 CONCIERGE｜登入</title>
   <link rel="icon" href="LOGO/Concierge_icon.ico">
-  <script src="js/jquery-3.5.1.min.js"></script>
+  <link rel="stylesheet" href="css/index.css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
 </head>
 
-<body>
-  <section class="main">
-    <div class="container">
-      <div class="logo">
-        <img src="LOGO/Concierge_1_white.svg" width:350px;>
-      </div>
-      <form method="post" action="mem_login_check.php" class="mem-login-area">
-        <div class="login">
-          <p><input name="mem_mail" id="adminID" type="text" required="required" value="" maxlength="20" placeholder="請輸入管理者email"></p>
-          <p><input name="mem_pwd" id="adminpw" type="text" required="required" value="" maxlength="20" placeholder="請輸入管理者密碼"></p>
-          <p><input type="submit" name="loginbtn" class="submit-btn" id="loginbtn" value="登入"></p>
-        </div>
-      </form>
-      <p><?php echo errMsg($error); ?></p>
+<body class="mem-index">
+<section class="container">
+  <div class="row pt-lg-4 pb-lg-4">
+    <div class="col-lg-2 offset-lg-5 col-6 offset-3">
+      <img src="LOGO/Concierge_1_white.svg" class="img-fluid" alt="">
     </div>
-  </section>
+  </div>
+  <div class="row">
+    <div class="col-lg-4 offset-lg-4">
+      <form method="post" action="./mem_login_check.php">
+          <div class="login">
+            <input type="text" name="mem_mail" class="form-control" required="required" value="" maxlength="20" placeholder="請輸入管理者email">
+            <input type="text" name="mem_pwd" class="form-control" required="required" value="" maxlength="20" placeholder="請輸入管理者密碼">
+            <input type="submit" name="loginbtn" class="loginbtn" value="登入">
+          </div>
+          <p class="errmsg"><?php echo errMsg($error); ?></p>
+      </form>
+    </div>
+  </div>
+</section>
 </body>
-
 </html>
+ 

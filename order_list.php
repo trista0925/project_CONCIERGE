@@ -68,7 +68,7 @@ catch ( PDOException $e ){
   <meta charset="UTF-8">
   <link href="css/font-awesome-4.7.0/css/font-awesome.min.css" rel="stylesheet">
   <link href="css/order_index.css" rel="stylesheet">
-  <title>行動管理員後台 - 會員訂單管理</title>
+  <title>行動管理員後台 CONCIERGE｜會員訂單管理</title>
   <link rel="icon" href="LOGO/Concierge_icon.ico">
   <script src="js/jquery-3.5.1.min.js"></script>
 </head>
@@ -84,7 +84,7 @@ catch ( PDOException $e ){
     <!--"右側會員訂單管理內容區塊-->
     <div class="content">
       <div class="wrap">
-        <h3>會員訂單管理</h3>
+        <h3 class="text-center">會員訂單管理</h3>
         <!--"管理者"（登入身份）須由後端帶入-->
         <span>
           <span>管理者: <?php if($mem_mail){  echo $mem_mail;}?></span>

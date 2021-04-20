@@ -93,7 +93,7 @@ catch ( PDOException $e ){
   <link rel="stylesheet" href="css/index.css">
   <link href="font-awesome-4.7.0/css/font-awesome.min.css" rel="stylesheet">
   <link rel="stylesheet" href="css/member_list.css">
-  <title>會員清單</title>
+  <title>行動管理員 CONCIERGE｜會員清單</title>
   <link rel="icon" href="LOGO/Concierge_icon.ico">
 </head>
 
@@ -111,7 +111,7 @@ catch ( PDOException $e ){
     <!--"右側會員訂單管理內容區塊-->
     <div class="content">
       <div class="wrap">
-        <h3>會員訂單管理</h3>
+        <h3 class="text-center">會員訂單管理</h3>
         <!--"管理者"（登入身份）須由後端帶入-->
         <p></p><a href="member_logout.php" value="">會員<?php if($mem_mail){  echo $mem_mail;}?>/登出</a>
       </div>

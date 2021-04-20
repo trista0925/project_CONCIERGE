@@ -36,7 +36,7 @@ try{
     header('Location: order_list.php');
   }else{
     echo "ERROR";
-    header('Location: index.php?msg=1');
+    header('Location: mem_index.php?msg=1');
   }
   
 }

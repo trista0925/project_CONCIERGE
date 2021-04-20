@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes, minimum-scale=1.0, maximum-scale=3.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <meta charset="UTF-8">
-  <title>合作商家</title>
+  <title>行動管理員 CONCIERGE｜合作商家</title>
   <link rel="icon" href="LOGO/Concierge_icon.ico">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
   <link rel="stylesheet" href="css/index.css">
@@ -19,7 +19,7 @@
   <section class="container pd-top-lg pd-bottom">
     <div class="store">
       <div>
-        <h3>店家地區分類</h3>
+        <h3 class="text-center">店家地區分類</h3>
       </div>
       <div>
         <select id="storeslt" class="form-control">
@@ -48,16 +48,16 @@
           <img src="images/store-3.jpg" class="img-fluid" alt="">
         </div>
         <div class="col-md-5">
-          <h3>店家名稱：</h3><span class="content1">MOOD木的生活</span>
+          <h3 class="text-center">店家名稱：</h3><span class="content1">MOOD木的生活</span>
           <br>
-          <h3>店家編號：</h3><span class="content1">13207</span>
+          <h3 class="text-center">店家編號：</h3><span class="content1">13207</span>
           <br>
-          <h3>店家地址：</h3><span class="content1">104台北市中山區中山北路二段16巷23號</span>
+          <h3 class="text-center">店家地址：</h3><span class="content1">104台北市中山區中山北路二段16巷23號</span>
           <br>
-          <h3>店家電話：</h3><span class="content1">02-2567-3787</span>
+          <h3 class="text-center">店家電話：</h3><span class="content1">02-2567-3787</span>
         </div>
         <div class="col-md-2">
-          <h3>店家營業時間：</h3>
+          <h3 class="text-center">店家營業時間：</h3>
           <p class="content1">星期一 07:30–22:00<br>
             星期二 07:30–22:00<br>
             星期三 07:30–22:00<br>
@@ -73,16 +73,16 @@
           <img src="images/store-2.jpg" class="img-fluid" alt="">
         </div>
         <div class="col-md-5">
-          <h3>店家名稱：</h3><span class="content1">Le Caféisme</span>
+          <h3 class="text-center">店家名稱：</h3><span class="content1">Le Caféisme</span>
           <br>
-          <h3>店家編號：</h3><span class="content1">13207</span>
+          <h3 class="text-center">店家編號：</h3><span class="content1">13207</span>
           <br>
-          <h3>店家地址：</h3><span class="content1">104台北市中山區中山北路二段16巷23號</span>
+          <h3 class="text-center">店家地址：</h3><span class="content1">104台北市中山區中山北路二段16巷23號</span>
           <br>
-          <h3>店家電話：</h3><span class="content1">02-2567-3787</span>
+          <h3 class="text-center">店家電話：</h3><span class="content1">02-2567-3787</span>
         </div>
         <div class="col-md-2">
-          <h3>店家營業時間：</h3>
+          <h3 class="text-center">店家營業時間：</h3>
           <p class="content1">星期一 07:30–22:00<br>
             星期二 07:30–22:00<br>
             星期三 07:30–22:00<br>
@@ -98,16 +98,16 @@
           <img src="images/store-1.jpg" class="img-fluid" alt="">
         </div>
         <div class="col-md-5">
-          <h3>店家名稱：</h3><span class="content1">zoeywin_photo</span>
+          <h3 class="text-center">店家名稱：</h3><span class="content1">zoeywin_photo</span>
           <br>
-          <h3>店家編號：</h3><span class="content1">13207</span>
+          <h3 class="text-center">店家編號：</h3><span class="content1">13207</span>
           <br>
-          <h3>店家地址：</h3><span class="content1">104台北市中山區中山北路二段16巷23號</span>
+          <h3 class="text-center">店家地址：</h3><span class="content1">104台北市中山區中山北路二段16巷23號</span>
           <br>
-          <h3>店家電話：</h3><span class="content1">02-2567-3787</span>
+          <h3 class="text-center">店家電話：</h3><span class="content1">02-2567-3787</span>
         </div>
         <div class="col-md-2">
-          <h3>店家營業時間：</h3>
+          <h3 class="text-center">店家營業時間：</h3>
           <p class="content1">星期一 07:30–22:00<br>
             星期二 07:30–22:00<br>
             星期三 07:30–22:00<br>
@@ -128,16 +128,16 @@
           <img src="images/store-1.jpg" class="img-fluid" alt="">
         </div>
         <div class="col-md-5">
-          <h3>店家名稱：</h3><span class="content1">zoeywin_photo</span>
+          <h3 class="text-center">店家名稱：</h3><span class="content1">zoeywin_photo</span>
           <br>
-          <h3>店家編號：</h3><span class="content1">13207</span>
+          <h3 class="text-center">店家編號：</h3><span class="content1">13207</span>
           <br>
-          <h3>店家地址：</h3><span class="content1">104台北市中山區中山北路二段16巷23號</span>
+          <h3 class="text-center">店家地址：</h3><span class="content1">104台北市中山區中山北路二段16巷23號</span>
           <br>
-          <h3>店家電話：</h3><span class="content1">02-2567-3787</span>
+          <h3 class="text-center">店家電話：</h3><span class="content1">02-2567-3787</span>
         </div>
         <div class="col-md-2">
-          <h3>店家營業時間：</h3>
+          <h3 class="text-center">店家營業時間：</h3>
           <p class="content1">星期一 07:30–22:00<br>
             星期二 07:30–22:00<br>
             星期三 07:30–22:00<br>
@@ -153,19 +153,19 @@
           <img src="images/store-2.jpg" class="img-fluid" alt="">
         </div>
         <div class="col-md-5">
-          <h3>店家名稱：</h3>
+          <h3 class="text-center">店家名稱：</h3>
           <span class="content1">Le Caféisme</span>
           <br>
-          <h3>店家編號：</h3>
+          <h3 class="text-center">店家編號：</h3>
           <span class="content1">13207</span>
           <br>
-          <h3>店家地址：</h3>
+          <h3 class="text-center">店家地址：</h3>
           <span class="content1">104台北市中山區中山北路二段16巷23號</span>
           <br>
-          <h3>店家電話：</h3><span class="content1">02-2567-3787</span>
+          <h3 class="text-center">店家電話：</h3><span class="content1">02-2567-3787</span>
         </div>
         <div class="col-md-2">
-          <h3>店家營業時間：</h3>
+          <h3 class="text-center">店家營業時間：</h3>
           <p class="content1">星期一 07:30–22:00<br>
             星期二 07:30–22:00<br>
             星期三 07:30–22:00<br>
@@ -186,16 +186,16 @@
           <img src="images/store-3.jpg" class="img-fluid" alt="">
         </div>
         <div class="col-md-5">
-          <h3>店家名稱：</h3><span class="content1">MOOD木的生活</span>
+          <h3 class="text-center">店家名稱：</h3><span class="content1">MOOD木的生活</span>
           <br>
-          <h3>店家編號：</h3><span class="content1">13207</span>
+          <h3 class="text-center">店家編號：</h3><span class="content1">13207</span>
           <br>
-          <h3>店家地址：</h3><span class="content1">104台北市中山區中山北路二段16巷23號</span>
+          <h3 class="text-center">店家地址：</h3><span class="content1">104台北市中山區中山北路二段16巷23號</span>
           <br>
-          <h3>店家電話：</h3><span class="content1">02-2567-3787</span>
+          <h3 class="text-center">店家電話：</h3><span class="content1">02-2567-3787</span>
         </div>
         <div class="col-md-2">
-          <h3>店家營業時間：</h3>
+          <h3 class="text-center">店家營業時間：</h3>
           <p class="content1">星期一 07:30–22:00<br>
             星期二 07:30–22:00<br>
             星期三 07:30–22:00<br>

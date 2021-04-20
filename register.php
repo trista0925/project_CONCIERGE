@@ -28,7 +28,7 @@ function errMsg($error) {
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes, minimum-scale=1.0, maximum-scale=3.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <meta charset="UTF-8">
-  <title>會員登入 / 註冊</title>
+  <title>行動管理員 CONCIERGE｜會員登入 / 註冊</title>
   <link rel="icon" href="LOGO/Concierge_icon.ico">
   <link rel="stylesheet" href="css/index.css">
   <script src="js/jquery-3.5.1.min.js"></script>
@@ -41,14 +41,14 @@ function errMsg($error) {
       <div class="col-lg-6 register-head">
         <div class="register-info"><a href="index.php"><img src="LOGO/Concierge_1_white.svg" class="img-fluid"></a>
         </div>
-          <h3>會員登入 Sign in</h3>
-          <form method="post" action="member_login_check.php">
+          <h3 class="text-center">會員登入 Sign in</h3>
+          <form method="post"  action="member_login_check.php">
           <input name="mem_mail" id="userID" type="email" required="required" value="" maxlength="50" placeholder="Email / Account 會員帳號">
           <input name="mem_pwd" id="userpw" type="password" required value="" maxlength="20" placeholder="Password 會員密碼">
           <input type="submit" name="loginbtn" class="loginbtn" value="登入">
           </form>
           <p><?php echo errMsg($error); ?></p>
-          <h3>註冊會員 Register</h3>
+          <h3 class="text-center">註冊會員 Register</h3>
           <form method="post" action="member_addmem_ok.php">
           <input name="mem_mail" id="addID" class="mem_mail add-mail" type="email" required="required" value="" maxlength="50" placeholder="Email Address 電子信箱">
           <div id="msg_mail" class="msg_mail"></div>
@@ -76,7 +76,7 @@ function errMsg($error) {
   var test_confirm_Pwd = false; //設定確認密碼的輸入是否正確,預設為否
   // var test_chk_code    = false;  //設定驗證碼的輸入是否正確,預設為否
 
-  var msg_blue_start = '<span style="color:blue">';
+  var msg_blue_start = '<span style="color:#478187">';
   var msg_blue_end = '</span>';
   var m1 = '<span class="str1"></span>';
   var m0 = '<span class="str0"></span>';

@@ -50,20 +50,20 @@ catch ( PDOException $e ){
     <div class="row wow animate__animated animate__fadeInUp animate__slow">
       <div class="col-md-4">
         <img class="step-icon" src="images/Step_1.png" alt="">
-        <h3>尋找管理員</h3>
-        <p class="textCen">尋找鄰近的合作商家<br>
+        <h3 class="text-center">尋找管理員</h3>
+        <p class="text-center">尋找鄰近的合作商家<br>
           這些商家會提供安全的貨物寄放空間</p>
       </div>
       <div class="col-md-4">
         <img class="step-icon" src="images/Step_2.png" alt="">
-        <h3>線上預訂</h3>
-        <p class="textCen">註冊會員並完成線上預訂<br>
+        <h3 class="text-center">線上預訂</h3>
+        <p class="text-center">註冊會員並完成線上預訂<br>
           可至會員訂單系統確認訂單資訊</p>
       </div>
       <div class="col-md-4">
         <img class="step-icon" src="images/Step_3.png" alt="">
-        <h3>取回包裹</h3>
-        <p class="textCen">當貨物抵達店家時<br>
+        <h3 class="text-center">取回包裹</h3>
+        <p class="text-center">當貨物抵達店家時<br>
           請至店家出示身份證件取回包裹</p>
       </div>
     </div>
@@ -109,24 +109,24 @@ catch ( PDOException $e ){
     <div class="row wow animate__animated animate__fadeInUp animate__slow">
       <div class="col-md-4">
         <img class="img-fluid" src="images/Features_1.png" alt="">
-        <h3>便利</h3>
-        <p class="textCen">住在無人收件的公寓、大樓<br>
+        <h3 class="text-center">便利</h3>
+        <p class="text-center">住在無人收件的公寓、大樓<br>
           導致常常收不到包裹嗎?<br>
           行動管理員提供鄰近你的商家存放包裹<br>
           讓整個城市都是你的管理員</p>
       </div>
       <div class="col-md-4">
         <img class="img-fluid" src="images/Features_2.png" alt="">
-        <h3>安全</h3>
-        <p class="textCen">合作商家均嚴格審核<br>
+        <h3 class="text-center">安全</h3>
+        <p class="text-center">合作商家均嚴格審核<br>
           包裹會寄放在有人員看管的地方<br>
           每件包裹提供最高台幣 5000 元保險金
         </p>
       </div>
       <div class="col-md-4">
         <img class="img-fluid" src="images/Features_3.png" alt="">
-        <h3>店家優惠</h3>
-        <p class="textCen">包裹取件的同時<br>
+        <h3 class="text-center">店家優惠</h3>
+        <p class="text-center">包裹取件的同時<br>
           可獲得店家提供的相關商品折扣
         </p>
       </div>

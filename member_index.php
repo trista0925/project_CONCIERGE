@@ -18,7 +18,7 @@ if (isset($_SESSION['mem_id']) && $_SESSION['mem_id'] != '') {
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes, minimum-scale=1.0, maximum-scale=3.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <meta charset="UTF-8">
-  <title>會員專區</title>
+  <title>行動管理員 CONCIERGE｜會員專區</title>
   <link rel="icon" href="LOGO/Concierge_icon.ico">
   <link rel="stylesheet" href="css/index.css">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
@@ -31,7 +31,7 @@ if (isset($_SESSION['mem_id']) && $_SESSION['mem_id'] != '') {
   <section class="container">
     <div class="row pt-lg-4 pb-lg-4">
       <div class="col-lg-2 offset-lg-5 col-6 offset-3">
-        <img src="LOGO/Concierge_1_white.svg" class="img-fluid" alt="">
+        <a href="index.php"><img src="LOGO/Concierge_1_white.svg" class="img-fluid" alt=""></a>
       </div>
     </div>
     <div class="row">
