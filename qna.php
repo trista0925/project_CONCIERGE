@@ -143,7 +143,6 @@
 
   <!--底部資訊-->
   <footer class="mt-auto pd-top pd-bottom sec-bg-color"></footer>
-  <script src="js/index.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
@@ -153,10 +152,7 @@
   <script src="js/wow.min.js"></script>
   <script>
     new WOW().init();
-
     $('.card').addClass('wow animate__animated animate__fadeInUp animate__slow');
-
   </script>
 </body>
-
 </html>

@@ -1,16 +1,15 @@
 <?php
-require_once('shared/conn_PDO.php');
+require_once 'shared/conn_PDO.php';
 session_start();
-if( isset($_SESSION['mem_id']) || $_SESSION['mem_id'] == '' ){
-  $mem_mail = $_SESSION['mem_mail'];
+if (isset($_SESSION['mem_id']) || $_SESSION['mem_id'] == '') {
+    $mem_mail = $_SESSION['mem_mail'];
 }
 try {
-  $rt_content = array(
-    'mem_mail' => $mem_mail,
-  );
-}
-catch ( PDOException $e ){
-  die("Error!: ". $e->getMessage());
+    $rt_content = array(
+        'mem_mail' => $mem_mail,
+    );
+} catch (PDOException $e) {
+    die("Error!: " . $e->getMessage());
 }
 ?>
 <!DOCTYPE html>
@@ -32,50 +31,45 @@ catch ( PDOException $e ){
   <header></header>
   <!--首頁圖及按鈕-->
   <section class="container-fluid">
-    <div class="row wow animate__animated animate__fadeIn animate__slow">
+    <div class="row">
       <img class="img-fluid" src="images/slider.jpg" alt="">
     </div>
-    <div class="row btnset-index justify-content-center wow animate__animated animate__fadeIn animate__slow">
+    <div class="row btnset-index justify-content-center">
       <a href="store.php" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">查看合作商家</a>
       <a href="register.php" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">開始使用</a>
     </div>
   </section>
   <!--服務介紹sec1-->
   <section class="container pd-top-lg pd-bottom-lg">
-    <div class="row wow animate__animated animate__fadeInUp animate__slow">
+    <div class="row">
       <div class="col-md-12">
         <h1>服務介紹<br>How to use</h1>
       </div>
     </div>
-    <div class="row wow animate__animated animate__fadeInUp animate__slow">
+    <div class="row">
       <div class="col-md-4">
-        <img class="step-icon" src="images/Step_1.png" alt="">
+        <div class="step-icon">1</div>
         <h3 class="text-center">尋找管理員</h3>
-        <p class="text-center">尋找鄰近的合作商家<br>
-          這些商家會提供安全的貨物寄放空間</p>
+        <p class="text-center">尋找鄰近的合作商家<br>這些商家會提供安全的貨物寄放空間</p>
       </div>
       <div class="col-md-4">
-        <img class="step-icon" src="images/Step_2.png" alt="">
-        <h3 class="text-center">線上預訂</h3>
-        <p class="text-center">註冊會員並完成線上預訂<br>
-          可至會員訂單系統確認訂單資訊</p>
+      <div class="step-icon">2</div><h3 class="text-center">線上預訂</h3>
+      <p class="text-center">註冊會員並完成線上預訂<br>可至會員訂單系統確認訂單資訊</p>
       </div>
       <div class="col-md-4">
-        <img class="step-icon" src="images/Step_3.png" alt="">
-        <h3 class="text-center">取回包裹</h3>
-        <p class="text-center">當貨物抵達店家時<br>
-          請至店家出示身份證件取回包裹</p>
+      <div class="step-icon">3</div><h3 class="text-center">取回包裹</h3>
+      <p class="text-center">當貨物抵達店家時<br>請至店家出示身份證件取回包裹</p>
       </div>
     </div>
   </section>
   <!--寄放價格sec2-->
   <section class="container-fluid pd-top-lg pd-bottom-lg sec-bg-color">
-    <div class="row wow animate__animated animate__fadeInUp animate__slow">
+    <div class="row">
       <div class="col-md-12">
         <h2>寄放價格<br>Prices</h2>
       </div>
     </div>
-    <div class="row wow animate__animated animate__fadeInUp animate__slow">
+    <div class="row">
       <div class="col-md-3">
         <h4>常溫<br>TWD 50 元/件</h4>
       </div>
@@ -84,12 +78,12 @@ catch ( PDOException $e ){
           尺寸在150公分以下(長+寬+高三邊合計)，20公斤以內。</p>
       </div>
     </div>
-    <div class="row wow animate__animated animate__fadeInUp animate__slow">
+    <div class="row">
       <div class="col-md-10 offset-md-1">
         <hr>
       </div>
     </div>
-    <div class="row wow animate__animated animate__fadeInUp animate__slow">
+    <div class="row">
       <div class="col-md-3">
         <h4>冷藏/冷凍<br>TWD 80 元/件</h4>
       </div>
@@ -101,12 +95,12 @@ catch ( PDOException $e ){
   </section>
   <!--特色sec3-->
   <section class="container pd-top-lg pd-bottom-lg">
-    <div class="row wow animate__animated animate__fadeInUp animate__slow">
+    <div class="row">
       <div class="col-md-12">
         <h1>特色<br>Features</h1>
       </div>
     </div>
-    <div class="row wow animate__animated animate__fadeInUp animate__slow">
+    <div class="row">
       <div class="col-md-4">
         <img class="img-fluid" src="images/Features_1.png" alt="">
         <h3 class="text-center">便利</h3>
@@ -131,18 +125,16 @@ catch ( PDOException $e ){
         </p>
       </div>
     </div>
-    <div class="py-3 row btnset-index justify-content-center wow animate__animated animate__fadeInUp animate__slow">
+    <div class="py-3 row btnset-index justify-content-center">
       <a href="register.php" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">開始使用</a>
     </div>
   </section>
   <!--底部資訊sec4-->
   <footer class="pd-top pd-bottom sec-bg-color"></footer>
-  <script>
+   <script>
     RT = {}
-    RT.content = < ? php echo json_encode($rt_content); ? > || {}
-
+    RT.content = <?php echo json_encode($rt_content); ?> || {}
   </script>
-  <script src="js/index.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
@@ -152,9 +144,7 @@ catch ( PDOException $e ){
   <script src="js/wow.min.js"></script>
   <script>
     new WOW().init();
-
+    $('.row').addClass('wow animate__animated animate__fadeIn animate__slow');
   </script>
-
 </body>
-
 </html>

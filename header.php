@@ -24,5 +24,4 @@
          var loginTmp = (RT.content['mem_mail']) ? RT.content['mem_mail'] : '登入/註冊'
          $('.login-item').text(loginTmp)
        });
-
      </script>

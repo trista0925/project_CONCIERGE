@@ -1,624 +1,741 @@
-  /* all page ===================================== */
-  
-  * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: 'Righteous', 'Noto Sans TC', sans-serif;
-  }
-  
-  html,
-  body {
-      height: 100%;
-  }
-  
-  body {
-      letter-spacing: 0.05rem;
-      font-size: 0.95rem;
-      line-height: 30px;
-      color: #333333;
-      background-color: #FFFFFF;
-      overflow-x: hidden;
-  }
-  
-  a {
-      text-decoration: none;
-      color: #333333;
-      cursor: pointer;
-  }
-  
-  ul,
-  ol,
-  li {
-      list-style: none;
-  }
-  
-  .v-center {
-      display: flex;
-      vertical-align: middle;
-      align-items: center;
-  }
-  
-  .no-any-pd {
-      padding-top: 0 !important;
-      padding-bottom: 0 !important;
-      padding-left: 0 !important;
-      padding-right: 0 !important;
-  }
-  /* 區塊padding調整 */
-  
-  .pd-top {
-      padding-top: 40px;
-  }
-  
-  .pd-bottom {
-      padding-bottom: 40px;
-  }
-  /* 區塊padding調整(加大) */
-  
-  .pd-top-lg {
-      padding-top: 80px;
-  }
-  
-  .pd-bottom-lg {
-      padding-bottom: 80px;
-  }
-  /* 首頁區塊大標(白底) */
-  
-  h1 {
-      color: #005F69;
-      font-size: 1.5rem;
-      font-weight: bold;
-      line-height: 32px;
-      margin-bottom: 30px;
-      text-align: center;
-  }
-  /* 首頁區塊大標(藍底) */
-  
-  h2 {
-      color: #ECECEC;
-      font-size: 1.5rem;
-      font-weight: bold;
-      line-height: 32px;
-      margin-bottom: 30px;
-      text-align: center;
-  }
-  /* 首頁標題(白底)、合作商家、會員註冊、訂單填寫 */
-  
-  h3 {
-      color: #005F69 !important;
-      font-size: 1.2rem;
-      font-weight: bold;
-      line-height: 50px;
-      margin-bottom: 0px !important;
-  }
-  /* 首頁標題(藍底) */
-  
-  h4 {
-      color: #ECECEC;
-      font-size: 1.2rem;
-      font-weight: bold;
-      line-height: 30px;
-      text-align: right;
-  }
-  /* 手機 */
-  
-  @media(max-width: 1024px) {
-      h4 {
-          text-align: center;
+      /* all page ===================================== */
+      
+      * {
+          margin: 0;
+          padding: 0;
+          box-sizing: border-box;
+          font-family: 'Righteous', 'Noto Sans TC', sans-serif;
       }
-  }
-  
-  p {
-      font-size: 0.9rem;
-  }
-  /* 有底色的內文文字 */
-  
-  .text-white {
-      color: #ECECEC;
-      line-height: 30px;
-  }
-  /* 文字置中 */
-  
-  .text-center {
-      text-align: center;
-  }
-  /* 桌機 */
-  
-  @media(min-width: 1025px) {
-      .text-vertical {
-          writing-mode: vertical-lr;
-          letter-spacing: 0.5rem;
+      
+      html,
+      body {
+          height: 100%;
       }
-  }
-  /* 分隔線 */
-  
-  hr {
-      border-top: 1px solid #c1c1c1;
-      padding-bottom: 10px;
-  }
-  /* header ===================================== */
-  /* 手機 */
-  
-  @media(max-width: 1024px) {
-      header>.container {
+      
+      body {
+          letter-spacing: 0.05rem;
+          font-size: 0.95rem;
+          line-height: 30px;
+          color: #333333;
+          background-color: #FFFFFF;
+          overflow-x: hidden;
+      }
+      
+      a {
+          text-decoration: none;
+          color: #333333;
+          cursor: pointer;
+      }
+      
+      ul,
+      ol,
+      li {
+          list-style: none;
+      }
+      
+      .v-center {
+          display: flex;
+          vertical-align: middle;
+          align-items: center;
+      }
+      
+      .no-any-pd {
+          padding-top: 0 !important;
+          padding-bottom: 0 !important;
+          padding-left: 0 !important;
+          padding-right: 0 !important;
+      }
+      /* 區塊padding調整 */
+      
+      .pd-top {
+          padding-top: 40px;
+      }
+      
+      .pd-bottom {
+          padding-bottom: 40px;
+      }
+      /* 區塊padding調整(加大) */
+      
+      .pd-top-lg {
           padding-top: 80px;
       }
-  }
-  /* footer ===================================== */
-  
-  .footer-logo {
-      width: 40%
-  }
-  /* 手機 */
-  
-  @media(max-width: 1024px) {
-      .footer-logo {
-          width: 80%
+      
+      .pd-bottom-lg {
+          padding-bottom: 80px;
       }
-  }
-  /* 首頁index ======================================== */
-  /* 有底色的區塊 */
-  
-  .sec-bg-color {
-      background-color: #005F69;
-      height: auto;
-  }
-  /* 服務介紹步驟icon */
-  
-  .step-icon {
-      width: 10%;
-      display: block;
-      margin: auto;
-  }
-  /* 按鈕位置&樣式 */
-  
-  .btnset-index {
-      margin: -35px;
-  }
-  
-  .btn-primary {
-      margin: 15px;
-      padding: 15px;
-      background-color: #005F69 !important;
-      border-color: #005F69 !important;
-  }
-  
-  .btn-primary:hover,
-  .btn-primary:focus,
-  .btn-primary:active:hover {
-      background-color: #478187 !important;
-      border-color: #478187 !important;
-  }
-  /* 合作商家store ===================================== */
-  
-  .store {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-  }
-  
-  .store h3 {
-      margin: 0px 15px;
-  }
-  
-  .store:after {
-      content: '';
-      padding-top: 100px;
-  }
-  /* 桌機 */
-  
-  @media(min-width: 1025px) {
-      .storeinfo {
+      /* 首頁區塊大標(白底) */
+      
+      h1 {
+          color: #005F69;
+          font-size: 1.5rem;
+          font-weight: bold;
+          line-height: 32px;
+          margin-bottom: 30px;
+          text-align: center;
+      }
+      /* 首頁區塊大標(藍底) */
+      
+      h2 {
+          color: #ECECEC;
+          font-size: 1.5rem;
+          font-weight: bold;
+          line-height: 32px;
+          margin-bottom: 30px;
+          text-align: center;
+      }
+      /* 首頁標題(白底)、合作商家、會員註冊、訂單填寫 */
+      
+      h3 {
+          color: #005F69 !important;
+          font-size: 1.2rem;
+          font-weight: bold;
+          line-height: 50px;
+          margin-bottom: 0px !important;
+      }
+      /* 首頁標題(藍底) */
+      
+      h4 {
+          color: #ECECEC;
+          font-size: 1.2rem;
+          font-weight: bold;
+          line-height: 30px;
+          text-align: right;
+      }
+      /* 手機 */
+      
+      @media(max-width: 1024px) {
+          h4 {
+              text-align: center;
+          }
+      }
+      
+      p {
+          font-size: 0.9rem;
+      }
+      /* 有底色的內文文字 */
+      
+      .text-white {
+          color: #ECECEC;
+          line-height: 30px;
+      }
+      /* 文字置中 */
+      
+      .text-center {
+          text-align: center;
+      }
+      /* 桌機 */
+      
+      @media(min-width: 1025px) {
+          .text-vertical {
+              writing-mode: vertical-lr;
+              letter-spacing: 0.5rem;
+          }
+      }
+      /* 分隔線 */
+      
+      hr {
+          border-top: 1px solid #c1c1c1;
+          padding-bottom: 10px;
+      }
+      /* header ===================================== */
+      /* 手機 */
+      
+      @media(max-width: 1024px) {
+          header>.container {
+              padding-top: 80px;
+          }
+      }
+      /* footer ===================================== */
+      
+      .footer-logo {
+          width: 40%
+      }
+      /* 手機 */
+      
+      @media(max-width: 1024px) {
+          .footer-logo {
+              width: 80%
+          }
+      }
+      /* 首頁index ======================================== */
+      /* 有底色的區塊 */
+      
+      .sec-bg-color {
+          background-color: #005F69;
+          height: auto;
+      }
+      /* 服務介紹步驟icon */
+      
+      .step-icon {
+          margin: auto;
+          width: 40px;
+          height: 40px;
+          line-height: 35px;
+          border: #005F69 3px solid;
+          border-radius: 50%;
+          color: #005F69;
+          font-size: 1.5rem;
+          font-weight: 600;
+          text-align: center;
+      }
+      /* 按鈕位置&樣式 */
+      
+      .btnset-index {
+          margin: -35px;
+      }
+      
+      .btn-primary {
+          margin: 15px;
+          padding: 15px;
+          background-color: #005F69 !important;
+          border-color: #005F69 !important;
+      }
+      
+      .btn-primary:hover,
+      .btn-primary:focus,
+      .btn-primary:active:hover {
+          background-color: #478187 !important;
+          border-color: #478187 !important;
+      }
+      /* 合作商家store ===================================== */
+      
+      .store {
           display: flex;
           justify-content: center;
           align-items: center;
       }
-  }
-  
-  .storeinfo h3 {
-      display: inline;
-  }
-  /* 聯絡我們contact ===================================== */
-  
-  .contact-list {
-      padding-top: 100px;
-  }
-  /* 手機 */
-  
-  @media(max-width: 1024px) {
+      
+      .store h3 {
+          margin: 0px 15px;
+      }
+      
+      .store:after {
+          content: '';
+          padding-top: 100px;
+      }
+      /* 桌機 */
+      
+      @media(min-width: 1025px) {
+          .storeinfo {
+              display: flex;
+              justify-content: center;
+              align-items: center;
+          }
+      }
+      
+      .storeinfo h3 {
+          display: inline;
+      }
+      /* 聯絡我們contact ===================================== */
+      
       .contact-list {
-          padding-top: 20px;
+          padding-top: 100px;
       }
-  }
-  /* 常見問題qna ===================================== */
-  
-  .qna {
-      padding: 120px 80px 60px 80px;
-  }
-  /* 手機 */
-  
-  @media(max-width: 1024px) {
+      /* 手機 */
+      
+      @media(max-width: 1024px) {
+          .contact-list {
+              padding-top: 20px;
+          }
+      }
+      /* 常見問題qna ===================================== */
+      
       .qna {
-          padding: 20px 0px 60px 0px;
+          padding: 120px 80px 60px 80px;
       }
-  }
-  
-  .btn-link {
-      width: 100%;
-      height: 100%;
-      color: #005F69;
-      text-decoration: none;
-      text-align: left;
-      line-height: 2.2rem;
-  }
-  
-  .btn-link:hover {
-      width: 100%;
-      height: 100%;
-      background-color: #005F69;
-      color: #ECECEC;
-      text-decoration: none;
-      text-align: left;
-  }
-  
-  .card-header {
-      padding: 0px;
-  }
-  /* 登入/註冊register ======================================== */
-  /* 桌機 */
-  
-  @media(min-width: 1025px) {
-      .register {
-          display: flex;
+      /* 手機 */
+      
+      @media(max-width: 1024px) {
+          .qna {
+              padding: 20px 0px 60px 0px;
+          }
       }
+      
+      .btn-link {
+          width: 100%;
+          height: 100%;
+          color: #005F69;
+          text-decoration: none;
+          text-align: left;
+          line-height: 2.2rem;
+      }
+      
+      .btn-link:hover {
+          width: 100%;
+          height: 100%;
+          background-color: #005F69;
+          color: #ECECEC;
+          text-decoration: none;
+          text-align: left;
+      }
+      
+      .card-header {
+          padding: 0px;
+      }
+      /* 登入/註冊register ======================================== */
+      
       .register-leftpic {
-          width: 70%;
           min-height: 100vh;
           background-image: url(../images/Registered_left_footer.jpg);
           background-size: cover;
       }
-  }
-  
-  .register-head {
-      width: 100%;
-      text-align: center;
-  }
-  
-  .register-info {
-      height: 80px;
-      background-color: #005F69;
-  }
-  
-  .register-info img {
-      height: 80px;
-      width: 120px;
-      max-width: 30%;
-  }
-  
-  .register input {
-      width: 50%;
-      height: 30px;
-      border-radius: 10px;
-      padding: 15px;
-      margin: 10px auto;
-      border: #8b8b8b 1px solid;
-  }
-  
-  .register .loginbtn,
-  .register .Registerbtn {
-      display: block;
-      width: 100px;
-      height: 35px;
-      border-radius: 50px;
-      padding: 5px;
-      background-color: #005F69;
-      color: #ECECEC;
-      font-size: 0.9rem;
-      letter-spacing: 5px;
-      text-indent: 5px;
-  }
-  
-  .register .loginbtn:hover,
-  .register .Registerbtn:hover {
-      outline: none;
-      background-color: #478187;
-      cursor: pointer;
-  }
-  
-  .msg_mail {
-      position: relative;
-      top: -15px;
-      left: 25%;
-      height: 0px;
-      font-size: 0.65rem;
-      color: #ff0000;
-  }
-  
-  .backbtn {
-      font-size: 0.8rem;
-  }
-  /* 會員首頁member_index ======================================== */
-  
-  .member-index {
-      margin: auto;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-      background-color: #005F69;
-      overflow: hidden;
-  }
-  
-  .send-btn {
-      display: block;
-      text-align: center;
-      width: 60px;
-      height: 60px;
-      line-height: 60px;
-      background: #478187;
-      font-size: 0.7rem;
-      color: #ECECEC;
-      border-radius: 50%;
-  }
-  
-  .send-btn:hover {
-      text-decoration: none;
-      color: #478187;
-      background: #ECECEC;
-  }
-  /* 填寫訂單order ======================================== */
-  /* 頁首 */
-  /* 桌機 */
-  
-  @media(min-width: 1025px) {
-      .order {
+      
+      .register {
           width: 100%;
-          height: 80px;
+          text-align: center;
+      }
+      
+      .register-logo {
+          height: 70px;
           background-color: #005F69;
       }
-      .order img {
-          margin: 0px 25px;
-          height: 80px;
+      
+      .register-logo img {
+          height: 70px;
           width: 120px;
           max-width: 30%;
       }
-      .order-head {
-          float: right;
-          margin: 0px 25px;
-          height: 80px;
-          line-height: 80px;
-      }
-      .order-head span {
+      
+      .register input {
+          width: 60%;
+          height: 30px;
+          border-radius: 10px;
+          padding: 10px;
+          margin: 10px auto;
+          border: #8b8b8b 1px solid;
           font-size: 0.85rem;
-          letter-spacing: 0.1rem;
+          letter-spacing: 2px;
+          text-indent: 2px;
+          outline: none;
+      }
+      
+      .register .loginbtn,
+      .register .Registerbtn {
+          display: block;
+          width: 100px;
+          line-height: 10px;
+          border-radius: 50px;
+          background-color: #005F69;
           color: #ECECEC;
+          outline: none;
+      }
+      
+      .register .loginbtn:hover,
+      .register .Registerbtn:hover {
+          outline: none;
+          background-color: #478187;
+          cursor: pointer;
+      }
+      
+      .msg_mail {
+          position: relative;
+          top: -15px;
+          left: 25%;
+          height: 0px;
+          font-size: 0.65rem;
+          color: #ff0000;
+      }
+      
+      .backbtn {
+          font-size: 0.75rem;
+      }
+      /* 會員首頁member_index ======================================== */
+      
+      .member-index {
+          margin: auto;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          height: 100vh;
+          background-color: #005F69;
+          overflow: hidden;
+      }
+      
+      .send-btn {
+          display: block;
+          text-align: center;
+          width: 60px;
+          height: 60px;
+          line-height: 60px;
+          background: #478187;
+          font-size: 0.7rem;
+          color: #ECECEC;
+          border-radius: 50%;
+      }
+      
+      .send-btn:hover {
+          text-decoration: none;
+          color: #478187;
+          background: #ECECEC;
+      }
+      /* 填寫訂單order ======================================== */
+      /* 頁首 */
+      /* 桌機 */
+      
+      @media(min-width: 1025px) {
+          .order {
+              width: 100%;
+              height: 80px;
+              background-color: #005F69;
+          }
+          .order img {
+              margin: 0px 25px;
+              height: 80px;
+              width: 120px;
+              max-width: 30%;
+          }
+          .order-head {
+              float: right;
+              margin: 0px 25px;
+              height: 80px;
+              line-height: 80px;
+          }
+          .order-head span {
+              font-size: 0.85rem;
+              letter-spacing: 0.1rem;
+              color: #ECECEC;
+              padding: 5px;
+          }
+      }
+      /* 手機 */
+      
+      @media(max-width: 1024px) {
+          .order {
+              width: 100%;
+              height: 120px;
+              background-color: #005F69;
+              text-align: center;
+          }
+          .order img {
+              height: 80px;
+              width: 100%;
+              max-width: 30%;
+          }
+          .order-head span {
+              font-size: 0.85rem;
+              color: #ECECEC;
+          }
+      }
+      
+      .order-info p {
+          color: #333333;
+          font-size: 0.95rem;
+          line-height: 40px;
+          margin-bottom: 0px;
+      }
+      /* 購物證明 */
+      
+      .order-upload {
+          font-size: 1rem;
+          height: 40px;
+          border: none;
+          outline: none;
+      }
+      
+      .order-image {
+          width: 300px;
+      }
+      /* 店家地圖 */
+      /* 桌機 */
+      
+      @media(min-width: 1025px) {
+          .order-map {
+              width: auto;
+              text-align: center;
+          }
+      }
+      /* 手機 */
+      
+      @media(max-width: 1024px) {
+          .order-map {
+              display: none;
+          }
+      }
+      /* 取貨店家資訊 */
+      
+      .order-shop-logo {
+          font-size: 1rem;
+          height: 60px;
+          line-height: 60px;
+          background-color: #005f69;
+          color: #ECECEC;
+      }
+      
+      .order-shop-logo img {
+          width: 120px;
+          height: auto;
+          margin: 0px 20px;
+      }
+      
+      .order-shop-info {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+      }
+      
+      .order-shop-info p {
+          line-height: 40px;
+          margin-bottom: 0rem;
+      }
+      
+      .order-shop-info img {
+          width: 50%;
+      }
+      /* 按鈕 */
+      
+      .order-btn {
+          text-align: center;
+      }
+      
+      .order-btn a {
+          width: 100px;
+          height: 35px;
+          line-height: 35px;
+          border-radius: 50px;
+          background-color: #005F69;
+          color: #ECECEC;
+          font-size: 0.9rem;
+      }
+      
+      .order-btn a:hover {
+          text-decoration: none;
+          outline: none;
+          color: #ECECEC;
+          background-color: #478187;
+          cursor: pointer;
+      }
+      /* 登出 */
+      
+      .logout-submit {
+          color: #6db3ba;
+      }
+      
+      .logout-submit:hover {
+          color: #ECECEC;
+      }
+      /* 完成訂單registerfinish ======================================== */
+      /* 頁首 */
+      /* 桌機 */
+      
+      @media(min-width: 1025px) {
+          .order-fin {
+              width: 100%;
+              height: 80px;
+              background-color: #005F69;
+          }
+          .order-fin img {
+              margin: 0px 25px;
+              height: 80px;
+              width: 120px;
+              max-width: 30%;
+          }
+      }
+      /* 手機 */
+      
+      @media(max-width: 1024px) {
+          .order-fin {
+              width: 100%;
+              height: 80px;
+              background-color: #005F69;
+              text-align: center;
+          }
+          .order-fin img {
+              height: 80px;
+              width: 100%;
+              max-width: 30%;
+          }
+      }
+      
+      .order-fin-btn {
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          height: 100vh;
+      }
+      
+      .order-fin-btn h3 {
+          font-size: 1.8rem;
+          line-height: 48px;
+          letter-spacing: 0.7rem;
+          text-indent: 0.7rem;
+      }
+      
+      .order-fin-btn a {
+          text-align: center;
+          width: 100px;
+          height: 35px;
+          line-height: 35px;
+          border-radius: 50px;
+          background-color: #005F69;
+          color: #ECECEC;
+          font-size: 0.9rem;
+          margin: 20px 0px 100px 0px;
+      }
+      
+      .order-fin-btn a:hover {
+          text-decoration: none;
+          outline: none;
+          color: #ECECEC;
+          background-color: #478187;
+          cursor: pointer;
+      }
+      /* 行動管理員後台登入mem_index ======================================== */
+      
+      .mem-index {
+          margin: auto;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          height: 100vh;
+          background-color: #005F69;
+          overflow: hidden;
+      }
+      
+      .mem-index .login {
+          background-color: #ffffff;
+          height: auto;
+          line-height: 10px;
+          padding: 30px;
+          border-radius: 10px;
+          text-align: center;
+      }
+      
+      .mem-index input {
+          margin-bottom: 15px;
+      }
+      
+      .mem-index .loginbtn {
+          width: 30%;
+          height: 30px;
+          border-radius: 50px;
           padding: 5px;
-      }
-  }
-  /* 手機 */
-  
-  @media(max-width: 1024px) {
-      .order {
-          width: 100%;
-          height: 120px;
+          border: none;
           background-color: #005F69;
+          color: #ECECEC;
+          font-size: 0.9rem;
+          letter-spacing: 5px;
+          text-indent: 5px;
+      }
+      
+      .mem-index .loginbtn:hover {
+          text-decoration: none;
+          outline: none;
+          color: #ECECEC;
+          background-color: #478187;
+          cursor: pointer;
+      }
+      
+      .errmsg {
           text-align: center;
-      }
-      .order img {
-          height: 80px;
-          width: 100%;
-          max-width: 30%;
-      }
-      .order-head span {
-          font-size: 0.85rem;
           color: #ECECEC;
       }
-  }
-  
-  .order-info p {
-      color: #333333;
-      font-size: 0.95rem;
-      line-height: 40px;
-      margin-bottom: 0px;
-  }
-  /* 購物證明 */
-  
-  .order-upload {
-      font-size: 1rem;
-      height: 40px;
-      border: none;
-      outline: none;
-  }
-  
-  .order-image {
-      width: 300px;
-  }
-  /* 店家地圖 */
-  /* 桌機 */
-  
-  @media(min-width: 1025px) {
-      .order-map {
-          width: auto;
+      /* 訂單管理member_list ======================================== */
+      /* 頁首 */
+      /* 桌機 */
+      
+      @media(min-width: 1025px) {
+          .member-list {
+              width: 100%;
+              height: 80px;
+          }
+          .member-list h1 {
+              display: inline;
+              vertical-align: middle;
+          }
+          .member-list img {
+              margin: 0px 25px;
+              width: 120px;
+              height: 80px;
+              max-width: 30%;
+          }
+          .member-list-head {
+              float: right;
+              margin: 0px 25px;
+              height: 80px;
+              line-height: 80px;
+          }
+          .member-list-head span {
+              font-size: 0.85rem;
+              letter-spacing: 0.1rem;
+              color: #005F69;
+              padding: 5px;
+          }
+          .table {
+              text-align: center;
+              margin-top: 40px;
+          }
+      }
+      /* 手機 */
+      
+      @media(max-width: 1024px) {
+          .member-list {
+              width: 100%;
+              height: 140px;
+              text-align: center;
+          }
+          .member-list h1 {
+              display: inline;
+              vertical-align: middle;
+              margin: 0px 10px;
+          }
+          .member-list img {
+              height: 80px;
+              width: 100%;
+              max-width: 30%;
+              margin: 0px 10px;
+          }
+          .member-list-head span {
+              font-size: 0.85rem;
+              color: #005F69;
+          }
+          .table {
+              text-align: center;
+          }
+      }
+      
+      .table-primary th {
+          color: #ECECEC;
+          background-color: #005F69 !important;
+          border-color: #005F69 !important;
+      }
+      
+      .table thead th {
+          vertical-align: middle;
+      }
+      /* 頁碼 */
+      
+      .pagenumber {
           text-align: center;
+          margin: 30px;
       }
-  }
-  /* 手機 */
-  
-  @media(max-width: 1024px) {
-      .order-map {
-          display: none;
+      
+      .pagenumber p {
+          margin: 10px;
       }
-  }
-  /* 取貨店家資訊 */
-  
-  .order-shop {
-      font-size: 1rem;
-      height: 60px;
-      line-height: 60px;
-      background-color: #005f69;
-      color: #ECECEC;
-  }
-  
-  .order-shop img {
-      width: 120px;
-      height: auto;
-      margin: 0px 20px;
-  }
-  
-  .order-shop-info {
-      display: flex;
-      flex-direction: column;
-  }
-  
-  .order-shop-info img {
-      text-align: center;
-  }
-  /* 按鈕 */
-  
-  .order-btn {
-      text-align: center;
-  }
-  
-  .order-btn a {
-      width: 100px;
-      height: 35px;
-      line-height: 35px;
-      border-radius: 50px;
-      background-color: #005F69;
-      color: #ECECEC;
-      font-size: 0.9rem;
-  }
-  
-  .order-btn a:hover {
-      text-decoration: none;
-      outline: none;
-      color: #ECECEC;
-      background-color: #478187;
-      cursor: pointer;
-  }
-  /* 登出 */
-  
-  .logout-submit {
-      color: #6db3ba;
-  }
-  
-  .logout-submit:hover {
-      color: #ECECEC;
-  }
-  /* 完成訂單egisterfinish ======================================== */
-  /* 頁首 */
-  /* 桌機 */
-  
-  @media(min-width: 1025px) {
-      .order-fin {
-          width: 100%;
-          height: 80px;
+      
+      ul.pagination {
+          display: inline-block;
+          padding: 0;
+          margin: 0;
+      }
+      
+      ul.pagination li {
+          display: inline;
+      }
+      
+      ul.pagination li a {
+          color: #333333;
+          padding: 10px;
+          text-decoration: none;
+          border-radius: 5px;
+      }
+      
+      ul.pagination li a.active {
           background-color: #005F69;
+          color: #ECECEC;
       }
-      .order-fin img {
-          margin: 0px 25px;
-          height: 80px;
-          width: 120px;
-          max-width: 30%;
+      
+      ul.pagination li a:hover:not(.active) {
+          background-color: #ECECEC;
       }
-  }
-  /* 手機 */
-  
-  @media(max-width: 1024px) {
-      .order-fin {
-          width: 100%;
-          height: 80px;
-          background-color: #005F69;
-          text-align: center;
-      }
-      .order-fin img {
-          height: 80px;
-          width: 100%;
-          max-width: 30%;
-      }
-  }
-  
-  .order-fin-btn {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-  }
-  
-  .order-fin-btn h3 {
-      font-size: 1.8rem;
-      line-height: 48px;
-      letter-spacing: 0.7rem;
-      text-indent: 0.7rem;
-  }
-  
-  .order-fin-btn a {
-      text-align: center;
-      width: 100px;
-      height: 35px;
-      line-height: 35px;
-      border-radius: 50px;
-      background-color: #005F69;
-      color: #ECECEC;
-      font-size: 0.9rem;
-      margin: 20px 0px 100px 0px;
-  }
-  
-  .order-fin-btn a:hover {
-      text-decoration: none;
-      outline: none;
-      color: #ECECEC;
-      background-color: #478187;
-      cursor: pointer;
-  }
-  /* 行動管理員後台登入mem_index ======================================== */
-  
-  .mem-index {
-      margin: auto;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-      background-color: #005F69;
-      overflow: hidden;
-  }
-  
-  .mem-index .login {
-      background-color: #ffffff;
-      height: auto;
-      padding: 30px;
-      border-radius: 10px;
-      text-align: center;
-  }
-  
-  .mem-index input {
-      margin-bottom: 15px;
-  }
-  
-  .mem-index .loginbtn {
-      width: 30%;
-      height: 30px;
-      border-radius: 50px;
-      padding: 5px;
-      border: none;
-      background-color: #005F69;
-      color: #ECECEC;
-      font-size: 0.9rem;
-      letter-spacing: 5px;
-      text-indent: 5px;
-  }
-  
-  .mem-index .loginbtn:hover {
-      text-decoration: none;
-      outline: none;
-      color: #ECECEC;
-      background-color: #478187;
-      cursor: pointer;
-  }
-  
-  .errmsg {
-      text-align: center;
-      color: #ECECEC;
-  }

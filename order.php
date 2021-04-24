@@ -1,75 +1,74 @@
 <?php
-require_once('shared/conn_PDO.php');
+require_once 'shared/conn_PDO.php';
 session_start();
-if( !isset($_SESSION['mem_id']) || $_SESSION['mem_id'] == '' ){
-  header('Location: register.php?msg=2');
+if (!isset($_SESSION['mem_id']) || $_SESSION['mem_id'] == '') {
+    header('Location: register.php?msg=2');
 }
 /* [ mem_list content ] */
-$mem_id   = $_SESSION['mem_id'];
+$mem_id = $_SESSION['mem_id'];
 $mem_mail = $_SESSION['mem_mail'];
 $mem_name = $_SESSION['mem_name'];
 $mem_list = array(
-  'mem_id'   => $mem_id,
-  'mem_mail' => $mem_mail,
-  'mem_name' => $mem_name
+    'mem_id' => $mem_id,
+    'mem_mail' => $mem_mail,
+    'mem_name' => $mem_name,
 );
 
 try {
-  /* [ store_list content ] */
-  $str = "SELECT store.* 
-            FROM store 
+    /* [ store_list content ] */
+    $str = "SELECT store.*
+            FROM store
             ORDER BY store.store_area_id ASC";
-  $RS_storelist = $conn -> query($str);
-  $store_list = array();
-  foreach( $RS_storelist as $key => $item ) {
-    $store_list[$key]['store_id']        = $item['store_id'];
-    $store_list[$key]['store_name']      = $item['store_name'];
-    $store_list[$key]['store_area_id']   = $item['store_area_id'];
-    $store_list[$key]['store_phone']     = $item['store_phone'];
-    $store_list[$key]['store_address']   = $item['store_address'];
-    $store_list[$key]['store_time_open'] = $item['store_time_open'];
-    $store_list[$key]['store_memo']      = $item['store_memo'];
-  }
-
-  /* [ area_list content ] */
-  $str = "SELECT area.* FROM area ORDER BY area.area_id ASC";
-  $RS_area = $conn -> query($str);
-  $area_list = array();
-  foreach( $RS_area as $key => $item ) {
-    $area_list[$item['area_id']] = $item['area_name'];
-  }
-
-  /* [ area_store_list content ] */
-  $area_store_list = array();
-  foreach( $area_list as $area_id => $area_name ) {
-    foreach( $store_list as $key => $store_item ) {
-      if( $area_id == $store_item['store_area_id'] ) {
-        $area_store_list[$area_id][$store_item['store_id']] = array(
-          'store_id'      => $store_item['store_id'],
-          'store_name'    => $store_item['store_name'],
-          'store_area_id' => $store_item['store_area_id'],
-          'store_phone'   => $store_item['store_phone'],
-          'store_address' => $store_item['store_address'],
-          'store_time_open' => $store_item['store_time_open'],
-          'store_memo'    => $store_item['store_memo'],
-        );
-      }
+    $RS_storelist = $conn->query($str);
+    $store_list = array();
+    foreach ($RS_storelist as $key => $item) {
+        $store_list[$key]['store_id'] = $item['store_id'];
+        $store_list[$key]['store_name'] = $item['store_name'];
+        $store_list[$key]['store_area_id'] = $item['store_area_id'];
+        $store_list[$key]['store_phone'] = $item['store_phone'];
+        $store_list[$key]['store_address'] = $item['store_address'];
+        $store_list[$key]['store_time_open'] = $item['store_time_open'];
+        $store_list[$key]['store_memo'] = $item['store_memo'];
     }
-  }
 
-  /* [ rt_content ] */
-  $rt_content = array(
-    // 'memId'    => $mem_id,
-    'mem_list'        => $mem_list,
-    'area_list'       => $area_list,
-    'area_store_list' => $area_store_list,
-    'PHP_SELF'      => $_SERVER['PHP_SELF'],
-    'QUERY_STRING'  => $_SERVER['QUERY_STRING'],
-    'HTTP_HOST'     => $_SERVER['HTTP_HOST'],
-  );
-}
-catch ( PDOException $e ){
-  die("Error!: ". $e->getMessage());
+    /* [ area_list content ] */
+    $str = "SELECT area.* FROM area ORDER BY area.area_id ASC";
+    $RS_area = $conn->query($str);
+    $area_list = array();
+    foreach ($RS_area as $key => $item) {
+        $area_list[$item['area_id']] = $item['area_name'];
+    }
+
+    /* [ area_store_list content ] */
+    $area_store_list = array();
+    foreach ($area_list as $area_id => $area_name) {
+        foreach ($store_list as $key => $store_item) {
+            if ($area_id == $store_item['store_area_id']) {
+                $area_store_list[$area_id][$store_item['store_id']] = array(
+                    'store_id' => $store_item['store_id'],
+                    'store_name' => $store_item['store_name'],
+                    'store_area_id' => $store_item['store_area_id'],
+                    'store_phone' => $store_item['store_phone'],
+                    'store_address' => $store_item['store_address'],
+                    'store_time_open' => $store_item['store_time_open'],
+                    'store_memo' => $store_item['store_memo'],
+                );
+            }
+        }
+    }
+
+    /* [ rt_content ] */
+    $rt_content = array(
+        // 'memId'    => $mem_id,
+        'mem_list' => $mem_list,
+        'area_list' => $area_list,
+        'area_store_list' => $area_store_list,
+        'PHP_SELF' => $_SERVER['PHP_SELF'],
+        'QUERY_STRING' => $_SERVER['QUERY_STRING'],
+        'HTTP_HOST' => $_SERVER['HTTP_HOST'],
+    );
+} catch (PDOException $e) {
+    die("Error!: " . $e->getMessage());
 }
 ?>
 <!DOCTYPE html>
@@ -80,17 +79,18 @@ catch ( PDOException $e ){
     <meta charset="UTF-8">
     <title>行動管理員 CONCIERGE｜訂單填寫</title>
     <link rel="icon" href="LOGO/Concierge_icon.ico">
-    <link rel="stylesheet" href="css/index.css">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" 
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
      crossorigin="anonymous">
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/animate.css">
   </head>
   <body>
   <section class="order container-fluid no-any-pd">
       <a href="index.php"><img src="LOGO/Concierge_1_white.svg" class="img-fluid"></a>
       <div class="order-head">
-      <span>登入會員: <?php echo $mem_name; ?></span>
-      <span>登入帳號: <?php echo $mem_mail; ?></span>
-      <span><a href="member_logout.php" class="logout-submit">登出</a></span>
+      <span>會員：<?php echo $mem_name; ?></span>
+      <span>帳號：<?php echo $mem_mail; ?></span>
+      <a href="member_logout.php" class="logout-submit">登出</a>
       </div>
   </section>
   <section class="container">
@@ -109,11 +109,31 @@ catch ( PDOException $e ){
         <div class="col-lg-2">
         <p>購物證明</p>
           <form enctype="multipart/form-data" method="POST" action="order_process.php" id="order_file_form">
-          <input type="file" class="order-upload" name="order_pic" id="fileUpload"> 
+          <input type="file" class="order-upload" name="order_pic" id="fileUpload">
           <input type="hidden" class="hidden-order-id" name="order_id" value="">
           </form>
           <div id="image-holder"></div>
         </div>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+        <script>
+   $("#fileUpload").on('change', function () {
+     if (typeof (FileReader) != "undefined") {
+      var image_holder = $("#image-holder");
+          image_holder.empty();
+      var reader = new FileReader();
+          reader.onload = function (e) {
+            $("<img/>", {
+              "src": e.target.result,
+              "class": "order-image"
+            }).appendTo(image_holder);
+          }
+          image_holder.show();
+          reader.readAsDataURL($(this)[0].files[0]);
+          } else {
+            alert("您的瀏覽器不支持FileReader");
+          }
+      });
+  </script>
       </div>
       <div class="row order-info pd-top-lg pd-bottom">
         <div class="col-lg-1 offset-lg-2">
@@ -153,20 +173,19 @@ catch ( PDOException $e ){
             </button>
           </div>
           <div class="modal-body">
-            <div class="order-shop">
+            <div class="order-shop-logo">
               <img src="LOGO/Concierge_1_white.svg" class="img-fluid">
               <span>確認店家資訊</span>
             </div>
             <div class="order-shop-info">
-              <span>店家名稱：<span class="store_name">Zoeyin_photo</span></span>
-              <span>店家電話：
-              <span class="store_phone">(02)2987-6543</span></span>
-              <span>店家位置：
-              <span class="store_address">10491台北市中山區民權東路二段78號</span></span>
-              <span>營業時間：
-              <span class="store_time_open">周一至周日 07：30–22：00</span></span>
-              <span>保管期限：三天之內</span>
-             <img src="images/store-1.jpg" class="img-fluid"> 
+              <div>
+                <p>店家名稱：<span class="store_name">Zoeyin_photo</span></p>
+                <p>店家電話：<span class="store_phone">(02)2987-6543</span></p>
+                <p>店家位置：<span class="store_address">10491台北市中山區民權東路二段78號</span></p>
+                <p>營業時間：<span class="store_time_open">周一至周日 07：30–22：00</span></p>
+                <p>保管期限：三天之內</p>
+              </div>
+              <img src="images/store-1.jpg" class="img-fluid">
             </div>
           </div>
         </div>
@@ -181,34 +200,18 @@ catch ( PDOException $e ){
   </div>
   </body>
   <!-- 購物證明上傳 -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js" ></script>
-  <script>
-   $("#fileUpload").on('change', function () {
-     if (typeof (FileReader) != "undefined") {
-      var image_holder = $("#image-holder");
-          image_holder.empty();
-      var reader = new FileReader();
-          reader.onload = function (e) {
-            $("<img/>", {
-              "src": e.target.result,
-              "class": "order-image"
-            }).appendTo(image_holder);
-          }
-          image_holder.show();
-          reader.readAsDataURL($(this)[0].files[0]);
-          } else {
-            alert("您的瀏覽器不支持FileReader");
-          }
-      });
-  </script>
-  <!-- 購物證明上傳 -->
   <script src="js/jquery-3.5.1.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"  crossorigin="anonymous"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"  crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"  crossorigin="anonymous"></script>
+<script src="js/wow.min.js"></script>
+   <script>
+    new WOW().init();
+    $('.container').addClass('wow animate__animated animate__fadeIn animate__slow');
+  </script>
   <script>
   RT = {}
   RT.content = <?php echo json_encode($rt_content) ?> || {}
-  RT.content.sizeData = { 
+  RT.content.sizeData = {
     '1': 'S型:50公分以下，20公斤以內',
     '2': 'M型:100公分以下，20公斤以內',
     '3': 'L型:150公分以下，20公斤以內',
@@ -241,7 +244,7 @@ catch ( PDOException $e ){
     var picturepath="";
     var imge = $("#changingpicture").find("img");
     var newmap = document.createElement("map");
-    newmap.name = "MapImg"; 
+    newmap.name = "MapImg";
     var areaId = parseInt($(this).val())
     var array = renderStoreArr(areaId)
         $("#sel2 option").remove();
@@ -250,7 +253,7 @@ catch ( PDOException $e ){
     var arrData = Object.values(RT.content['area_store_list'][areaId]).map((v,k)=>{ return v })
     var arrayhref = arrData.map((v,k) => { return v['store_id'] })
     switch (areaId){
-      case 0: 
+      case 0:
         picturepath="";
         imge.attr("src", picturepath);
         break;
@@ -258,7 +261,7 @@ catch ( PDOException $e ){
       case 1:
         picturepath="images/map/v1.jpg";
         imge.attr("src", picturepath);
-        var arraycoords =["177,381,86","599,487,81","856,183,75","379,93,79"];
+        var arraycoords =["856,183,75","599,487,81","177,381,86","379,93,79"];
 
         $.each(arraycoords,function(j,val) {
           var newarea = document.createElement("area");
@@ -272,7 +275,7 @@ catch ( PDOException $e ){
         getdiv.appendChild(newmap);
 
         var getimg = document.getElementById("Mymap");
-        getimg.setAttribute('usemap', "#MapImg");	
+        getimg.setAttribute('usemap', "#MapImg");
 
         //------------END--------------
         break;
@@ -282,17 +285,17 @@ catch ( PDOException $e ){
         imge.attr("src", picturepath);
         break;
 
-      case 3:  
+      case 3:
         picturepath="images/map/v3.jpg";
         imge.attr("src", picturepath);
         break;
 
-      case 4:  
+      case 4:
         picturepath="images/map/v4.jpg";
         imge.attr("src", picturepath);
         break;
 
-      case 5:    
+      case 5:
         picturepath="images/map/v5.jpg";
         imge.attr("src", picturepath);
         break;
@@ -302,32 +305,32 @@ catch ( PDOException $e ){
         imge.attr("src", picturepath);
         break;
 
-      case 7: 
+      case 7:
         picturepath="images/map/v7.jpg";
         imge.attr("src", picturepath);
         break;
 
-      case 8:  
+      case 8:
         picturepath="images/map/v8.jpg";
         imge.attr("src", picturepath);
         break;
 
-      case 9: 
+      case 9:
         picturepath="images/map/v9.jpg";
         imge.attr("src", picturepath);
         break;
 
-      case 10:  
+      case 10:
         picturepath="images/map/v10.jpg";
         imge.attr("src", picturepath);
         break;
 
-      case 11:  
+      case 11:
         picturepath="images/map/v11.jpg";
         imge.attr("src", picturepath);
         break;
 
-      case 12: 
+      case 12:
         picturepath="images/map/v12.jpg";
         imge.attr("src", picturepath);
         break;
@@ -350,7 +353,7 @@ catch ( PDOException $e ){
       $('.storephoto-img').attr('src', `images/store-${getmap}.jpg`)
 
       $('.modal').modal();
-    });   
+    });
   });
   </script>
   <script>

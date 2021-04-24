@@ -1,24 +1,25 @@
 <?php
-require_once('shared/conn_PDO.php');
+require_once 'shared/conn_PDO.php';
 session_start();
 
-if ( isset( $_GET['msg'] ) && $_GET['msg'] != '' ) {
-  $error = $_GET['msg'];
+if (isset($_GET['msg']) && $_GET['msg'] != '') {
+    $error = $_GET['msg'];
 }
-if ( isset( $_SESSION['mem_id'] ) && $_SESSION['mem_id'] != '' ) {
-  header('Location: member_index.php');
+if (isset($_SESSION['mem_id']) && $_SESSION['mem_id'] != '') {
+    header('Location: member_index.php');
 }
 
-function errMsg($error) {
-  $msg = '';
-  switch($error) {
-    case 1:
-      $msg = '帳號或密碼錯誤';
-      break;
-    case 2:
-      $msg = '請輸入會員帳號';
-  }
-  return $msg;
+function errMsg($error)
+{
+    $msg = '';
+    switch ($error) {
+        case 1:
+            $msg = '帳號或密碼錯誤';
+            break;
+        case 2:
+            $msg = '請輸入會員帳號';
+    }
+    return $msg;
 }
 ?>
 <!DOCTYPE html>
@@ -30,16 +31,17 @@ function errMsg($error) {
   <meta charset="UTF-8">
   <title>行動管理員 CONCIERGE｜會員登入 / 註冊</title>
   <link rel="icon" href="LOGO/Concierge_icon.ico">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
   <link rel="stylesheet" href="css/index.css">
-  <script src="js/jquery-3.5.1.min.js"></script>
+  <link rel="stylesheet" href="css/animate.css">
 </head>
 
 <body>
 <section class="container-fluid">
-    <div class="row register">
-      <div class="col-lg-6 register-leftpic"></div>
-      <div class="col-lg-6 register-head">
-        <div class="register-info"><a href="index.php"><img src="LOGO/Concierge_1_white.svg" class="img-fluid"></a>
+    <div class="row">
+      <div class="col-lg-5 d-none d-sm-none d-md-block register-leftpic"></div>
+      <div class="col-lg-7 register no-any-pd">
+        <div class="register-logo"><a href="index.php"><img src="LOGO/Concierge_1_white.svg" class="img-fluid"></a>
         </div>
           <h3 class="text-center">會員登入 Sign in</h3>
           <form method="post"  action="member_login_check.php">
@@ -61,10 +63,13 @@ function errMsg($error) {
           <input type="submit" name="Registerbtn" class="Registerbtn" value="註冊">
           </form>
           <a href="index.php" class="backbtn" type="submit" name="back" value="回上一頁">回上一頁</a>
-      </div> 
+      </div>
     </div>
   </section>
-</body>
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
+  <script src="js/jquery-3.5.1.min.js"></script>
 <script>
   var chk_mail = $(".add-mail"); //帳號
   var chk_pwd = $("#addPW"); //密碼
@@ -128,5 +133,5 @@ function errMsg($error) {
   })
 
 </script>
-
+</body>
 </html>

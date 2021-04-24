@@ -17,11 +17,11 @@
   <header></header>
   <!--聯絡表單-->
   <section class="container-fluid">
-    <div class="row v-center">
-      <div class="col-md-5 d-none d-sm-none d-md-block no-any-pd wow animate__animated animate__fadeInLeft animate__slow">
+    <div class="row v-center wow animate__animated animate__fadeIn animate__slower">
+      <div class="col-md-5 d-none d-sm-none d-md-block no-any-pd">
         <img class="img-fluid" src="images/contact.jpg" alt="">
       </div>
-      <div class="col-md-7 contact-list wow animate__animated animate__fadeIn animate__slower">
+      <div class="col-md-7 contact-list">
         <iframe src="https://docs.google.com/forms/d/e/1FAIpQLScguPbtjwi1ojHbmfpXZj6D05TYiy_juSFbP7tcOQJ39Igiuw/viewform?embedded=true" width="100%" height="790px" frameborder="0" marginheight="0" marginwidth="0">載入中…</iframe>
       </div>
     </div>
@@ -29,7 +29,6 @@
 
   <!--底部資訊-->
   <footer class="pd-top pd-bottom sec-bg-color"></footer>
-  <script src="js/index.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
@@ -39,8 +38,6 @@
   <script src="js/wow.min.js"></script>
   <script>
     new WOW().init();
-
   </script>
 </body>
-
 </html>

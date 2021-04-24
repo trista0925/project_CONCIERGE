@@ -7,23 +7,25 @@
     <meta charset="UTF-8">
     <title>行動管理員 CONCIERGE｜完成訂單</title>
     <link rel="icon" href="LOGO/Concierge_icon.ico">
-    <link rel="stylesheet" href="css/index.css">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" 
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
     crossorigin="anonymous">
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/animate.css">
   </head>
   <body style="overflow: hidden;">
-  <section class="order-fin container-fluid no-any-pd">
+  <section class="order-fin container-fluid no-any-pd wow animate__animated animate__fadeIn animate__slower">
       <a href="index.php"><img src="LOGO/Concierge_1_white.svg" class="img-fluid"></a>
       <div class="row order-fin-btn justify-content-center">
       <h3>完成訂單</h3>
       <a href="member_list.php" type="submit" name="back" value="">回訂單管理</a>
       </div>
-  </section>  
-  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" 
-   crossorigin="anonymous"></script>
-  <script   src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" 
-   crossorigin="anonymous"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" 
-   crossorigin="anonymous"></script>
+  </section>
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" crossorigin="anonymous"></script>
+  <script src="js/wow.min.js"></script>
+  <script>
+    new WOW().init();
+  </script>
   </body>
 </html>
