@@ -13,21 +13,17 @@
 </head>
 
 <body>
-  <!--導覽列-->
   <header></header>
-  <!--聯絡表單-->
   <section class="container-fluid">
     <div class="row v-center wow animate__animated animate__fadeIn animate__slower">
-      <div class="col-md-5 d-none d-sm-none d-md-block no-any-pd">
+      <div class="col-lg-5 d-none d-sm-none d-lg-block no-any-pd">
         <img class="img-fluid" src="images/contact.jpg" alt="">
       </div>
-      <div class="col-md-7 contact-list">
+      <div class="col-lg-7 pt-lg-5">
         <iframe src="https://docs.google.com/forms/d/e/1FAIpQLScguPbtjwi1ojHbmfpXZj6D05TYiy_juSFbP7tcOQJ39Igiuw/viewform?embedded=true" width="100%" height="790px" frameborder="0" marginheight="0" marginwidth="0">載入中…</iframe>
       </div>
     </div>
   </section>
-
-  <!--底部資訊-->
   <footer class="pd-top pd-bottom sec-bg-color"></footer>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>

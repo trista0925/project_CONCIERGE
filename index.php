@@ -27,81 +27,76 @@ try {
 </head>
 
 <body>
-  <!--導覽列-->
   <header></header>
-  <!--首頁圖及按鈕-->
   <section class="container-fluid">
     <div class="row">
       <img class="img-fluid" src="images/slider.jpg" alt="">
     </div>
     <div class="row btnset-index justify-content-center">
-      <a href="store.php" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">查看合作商家</a>
-      <a href="register.php" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">開始使用</a>
+      <a href="store.php" class="btn btn-primary p-3 m-3 btn-lg active" role="button" aria-pressed="true">查看合作商家</a>
+      <a href="register.php" class="btn btn-primary p-3 m-3 btn-lg active" role="button" aria-pressed="true">開始使用</a>
     </div>
   </section>
-  <!--服務介紹sec1-->
   <section class="container pd-top-lg pd-bottom-lg">
     <div class="row">
-      <div class="col-md-12">
-        <h1>服務介紹<br>How to use</h1>
+      <div class="col-lg-12">
+        <h1 class="text-center">服務介紹<br>How to use</h1>
       </div>
     </div>
     <div class="row">
-      <div class="col-md-4">
+      <div class="col-lg-4 pd-top">
         <div class="step-icon">1</div>
         <h3 class="text-center">尋找管理員</h3>
         <p class="text-center">尋找鄰近的合作商家<br>這些商家會提供安全的貨物寄放空間</p>
       </div>
-      <div class="col-md-4">
+      <div class="col-lg-4 pd-top">
       <div class="step-icon">2</div><h3 class="text-center">線上預訂</h3>
       <p class="text-center">註冊會員並完成線上預訂<br>可至會員訂單系統確認訂單資訊</p>
       </div>
-      <div class="col-md-4">
+      <div class="col-lg-4 pd-top">
       <div class="step-icon">3</div><h3 class="text-center">取回包裹</h3>
       <p class="text-center">當貨物抵達店家時<br>請至店家出示身份證件取回包裹</p>
       </div>
     </div>
   </section>
-  <!--寄放價格sec2-->
   <section class="container-fluid pd-top-lg pd-bottom-lg sec-bg-color">
     <div class="row">
-      <div class="col-md-12">
-        <h2>寄放價格<br>Prices</h2>
+      <div class="col-lg-12 mb-4">
+        <h2 class="text-center">寄放價格<br>Prices</h2>
       </div>
     </div>
     <div class="row">
-      <div class="col-md-3">
+      <div class="col-lg-3">
         <h4>常溫<br>TWD 50 元/件</h4>
       </div>
-      <div class="col-md-7 offset-md-1">
+      <div class="col-lg-7 offset-lg-1">
         <p class="text-white">一般常溫包裹（一般包裹、行李託運、飯店行李託運、喜餅、電腦主機、網拍......等）<br>
           尺寸在150公分以下(長+寬+高三邊合計)，20公斤以內。</p>
       </div>
     </div>
     <div class="row">
-      <div class="col-md-10 offset-md-1">
+      <div class="col-lg-10 offset-lg-1">
         <hr>
       </div>
     </div>
     <div class="row">
-      <div class="col-md-3">
+      <div class="col-lg-3">
         <h4>冷藏/冷凍<br>TWD 80 元/件</h4>
       </div>
-      <div class="col-md-7 offset-md-1">
+      <div class="col-lg-7 offset-lg-1">
         <p class="text-white">一般低溫（冷藏、冷凍）包裹，尺寸在120公分以下，20公斤以內，<br>
           宅配前務必將低溫包裹預冷6小時至冷藏狀態，或12小時至冷凍狀態，且確認未漏水。</p>
       </div>
     </div>
   </section>
-  <!--特色sec3-->
   <section class="container pd-top-lg pd-bottom-lg">
     <div class="row">
-      <div class="col-md-12">
-        <h1>特色<br>Features</h1>
+      <div class="col-lg-12 mb-4">
+        <h1 class="text-center">特色<br>Features</h1>
       </div>
     </div>
     <div class="row">
-      <div class="col-md-4">
+      <div class="col-lg-4 pd-bottom">
         <img class="img-fluid" src="images/Features_1.png" alt="">
         <h3 class="text-center">便利</h3>
         <p class="text-center">住在無人收件的公寓、大樓<br>
@@ -109,7 +104,7 @@ try {
           行動管理員提供鄰近你的商家存放包裹<br>
           讓整個城市都是你的管理員</p>
       </div>
-      <div class="col-md-4">
+      <div class="col-lg-4 pd-bottom">
         <img class="img-fluid" src="images/Features_2.png" alt="">
         <h3 class="text-center">安全</h3>
         <p class="text-center">合作商家均嚴格審核<br>
@@ -117,7 +112,7 @@ try {
           每件包裹提供最高台幣 5000 元保險金
         </p>
       </div>
-      <div class="col-md-4">
+      <div class="col-lg-4 pd-bottom">
         <img class="img-fluid" src="images/Features_3.png" alt="">
         <h3 class="text-center">店家優惠</h3>
         <p class="text-center">包裹取件的同時<br>
@@ -126,10 +121,9 @@ try {
       </div>
     </div>
     <div class="py-3 row btnset-index justify-content-center">
-      <a href="register.php" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">開始使用</a>
+      <a href="register.php" class="btn btn-primary p-3 m-3 btn-lg active" role="button" aria-pressed="true">開始使用</a>
     </div>
   </section>
-  <!--底部資訊sec4-->
   <footer class="pd-top pd-bottom sec-bg-color"></footer>
    <script>
     RT = {}

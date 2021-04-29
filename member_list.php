@@ -87,7 +87,7 @@ try {
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes, minimum-scale=1.0, maximum-scale=3.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <meta charset="UTF-8">
-  <title>行動管理員 CONCIERGE｜訂單管理</title>
+  <title>行動管理員 CONCIERGE｜訂單查詢</title>
   <link rel="icon" href="LOGO/Concierge_icon.ico">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
   <link href="css/font-awesome-4.7.0/css/font-awesome.min.css" rel="stylesheet">
@@ -95,7 +95,7 @@ try {
 </head>
 <body>
 <section class="member-list container-fluid">
-  <a href="index.php"><img src="LOGO/Concierge_1.svg" class="img-fluid"></a><h1>訂單管理</h1>
+  <a href="index.php"><img src="LOGO/Concierge_1.svg" class="img-fluid"></a><h1>訂單查詢</h1>
       <div class="member-list-head">
      <!--"管理者"（登入身份）須由後端帶入-->
      <span>會員：<?php if ($mem_name) {echo $mem_name;}?></span>
@@ -108,11 +108,11 @@ try {
     <table class="table table-striped">
       <thead>
         <tr class="table-primary">
-          <th scope="col-6">編號</th>
-          <th scope="col-6">取件人</th>
-          <th scope="col-2">預計抵達時間</th>
-          <th scope="col-2">預計取件時間</th>
-          <th scope="col">取件店家名稱</th>
+          <th>訂單編號</th>
+          <th>取件人</th>
+          <th>預計抵達時間</th>
+          <th>預計取件時間</th>
+          <th>取件店家名稱</th>
         </tr>
       </thead>
         <tbody>
@@ -137,7 +137,6 @@ try {
           <?php }?>
         </tbody>
       </table>
-      <!-- pagenation -->
       <div class="pagenumber">
         <ul class="pager pagination">
           <?php
@@ -162,7 +161,9 @@ if ($curr_page < $total_pages - 1) {
               <i class="fa fa-angle-double-right"></i></a></li>';
 }?>
         </ul>
-        <p><a href="member_index.php" class="backbtn" name="back" value="回上一頁">回上一頁</a></p>
+        <div class="order-btn pd-top pd-bottom">
+        <a href="member_index.php" type="submit" name="back" value="回上一頁">回上一頁</a>
+      </div>
       </div>
   </section>
 </body>

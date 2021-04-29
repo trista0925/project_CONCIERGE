@@ -86,7 +86,7 @@ try {
   </head>
   <body>
   <section class="order container-fluid no-any-pd">
-      <a href="index.php"><img src="LOGO/Concierge_1_white.svg" class="img-fluid"></a>
+      <a href="index.php"><img src="LOGO/Concierge_1_white.svg" class="img-fluid"></a><h2>訂單填寫</h2>
       <div class="order-head">
       <span>會員：<?php echo $mem_name; ?></span>
       <span>帳號：<?php echo $mem_mail; ?></span>
@@ -94,7 +94,7 @@ try {
       </div>
   </section>
   <section class="container">
-      <div class="row order-info pd-top-lg"><?php echo $val ?>
+      <div class="row order-info pt-lg-5 pt-3"><?php echo $val ?>
         <div class="col-lg-1 offset-lg-2">
           <h3 class="text-vertical">基本資料</h3>
         </div>
@@ -106,16 +106,26 @@ try {
           <p>手機</p>
           <input type="text" class="form-control" name="phone" id="phone" required="required" value="" maxlength="10" placeholder="請輸入手機號碼">
         </div>
-        <div class="col-lg-2">
+        <div class="col-lg-3">
         <p>購物證明</p>
           <form enctype="multipart/form-data" method="POST" action="order_process.php" id="order_file_form">
-          <input type="file" class="order-upload" name="order_pic" id="fileUpload">
+          <div class="custom-file">    
+            <input type="file" class="custom-file-input" id="fileUpload" name="order_pic">    
+            <label class="custom-file-label" for="fileUpload" style="overflow: hidden;">選擇檔案</label>
+          </div>
           <input type="hidden" class="hidden-order-id" name="order_id" value="">
           </form>
           <div id="image-holder"></div>
         </div>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
         <script>
+// Bootstrap 4上傳檔案介面無法顯示檔案路徑或檔名解決
+          $(document).ready(function(){
+  $(".custom-file-input").change(function () {
+    $(this).next(".custom-file-label").html($(this).val().split("\\").pop());
+  });
+});
+// Bootstrap 4上傳檔案介面無法顯示檔案路徑或檔名解決
    $("#fileUpload").on('change', function () {
      if (typeof (FileReader) != "undefined") {
       var image_holder = $("#image-holder");
@@ -135,7 +145,7 @@ try {
       });
   </script>
       </div>
-      <div class="row order-info pd-top-lg pd-bottom">
+      <div class="row order-info pt-lg-5 pt-5 pb-lg-3 pb-3">
         <div class="col-lg-1 offset-lg-2">
         <h3 class="text-vertical">包裹寄放資訊</h3>
         </div>
@@ -169,7 +179,7 @@ try {
             <p class="modal-title" id="exampleModalCenterTitle">選擇店舖
             </p>
             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-              <span aria-hidden="true">&times;</span>
+            <span aria-hidden="true">&times;</span>
             </button>
           </div>
           <div class="modal-body">
@@ -199,7 +209,6 @@ try {
   <a href="javascript:;" id="sendbtn" type="submit" name="send" value="送出">送出</a>
   </div>
   </body>
-  <!-- 購物證明上傳 -->
   <script src="js/jquery-3.5.1.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"  crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"  crossorigin="anonymous"></script>

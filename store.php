@@ -13,9 +13,7 @@
 </head>
 
 <body class="d-flex flex-column">
-  <!--導覽列-->
   <header></header>
-  <!--店家地區分類-->
   <section class="container pd-top-lg pd-bottom">
     <div class="store">
       <div>
@@ -40,14 +38,13 @@
       </div>
     </div>
   </section>
-  <!--店家內容-->
   <div id="top_0">
     <section class="container">
       <div class="storeinfo">
-        <div class="col-md-5">
+        <div class="col-lg-5">
           <img src="images/store-3.jpg" class="img-fluid" alt="">
         </div>
-        <div class="col-md-5">
+        <div class="col-lg-5">
           <h3 class="text-center">店家名稱：</h3><span class="content1">MOOD木的生活</span>
           <br>
           <h3 class="text-center">店家編號：</h3><span class="content1">13207</span>
@@ -56,7 +53,7 @@
           <br>
           <h3 class="text-center">店家電話：</h3><span class="content1">02-2567-3787</span>
         </div>
-        <div class="col-md-2">
+        <div class="col-lg-2">
           <h3 class="text-center">店家營業時間：</h3>
           <p class="content1">星期一 07:30–22:00<br>
             星期二 07:30–22:00<br>
@@ -69,10 +66,10 @@
       </div>
       <hr>
       <div class="storeinfo">
-        <div class="col-md-5">
+        <div class="col-lg-5">
           <img src="images/store-2.jpg" class="img-fluid" alt="">
         </div>
-        <div class="col-md-5">
+        <div class="col-lg-5">
           <h3 class="text-center">店家名稱：</h3><span class="content1">Le Caféisme</span>
           <br>
           <h3 class="text-center">店家編號：</h3><span class="content1">13207</span>
@@ -81,7 +78,7 @@
           <br>
           <h3 class="text-center">店家電話：</h3><span class="content1">02-2567-3787</span>
         </div>
-        <div class="col-md-2">
+        <div class="col-lg-2">
           <h3 class="text-center">店家營業時間：</h3>
           <p class="content1">星期一 07:30–22:00<br>
             星期二 07:30–22:00<br>
@@ -94,10 +91,10 @@
       </div>
       <hr>
       <div class="storeinfo">
-        <div class="col-md-5">
+        <div class="col-lg-5">
           <img src="images/store-1.jpg" class="img-fluid" alt="">
         </div>
-        <div class="col-md-5">
+        <div class="col-lg-5">
           <h3 class="text-center">店家名稱：</h3><span class="content1">zoeywin_photo</span>
           <br>
           <h3 class="text-center">店家編號：</h3><span class="content1">13207</span>
@@ -106,7 +103,7 @@
           <br>
           <h3 class="text-center">店家電話：</h3><span class="content1">02-2567-3787</span>
         </div>
-        <div class="col-md-2">
+        <div class="col-lg-2">
           <h3 class="text-center">店家營業時間：</h3>
           <p class="content1">星期一 07:30–22:00<br>
             星期二 07:30–22:00<br>
@@ -120,14 +117,13 @@
       <hr>
     </section>
   </div>
-
   <div id="tab_1">
     <section class="container">
       <div class="storeinfo">
-        <div class="col-md-5">
+        <div class="col-lg-5">
           <img src="images/store-1.jpg" class="img-fluid" alt="">
         </div>
-        <div class="col-md-5">
+        <div class="col-lg-5">
           <h3 class="text-center">店家名稱：</h3><span class="content1">zoeywin_photo</span>
           <br>
           <h3 class="text-center">店家編號：</h3><span class="content1">13207</span>
@@ -136,7 +132,7 @@
           <br>
           <h3 class="text-center">店家電話：</h3><span class="content1">02-2567-3787</span>
         </div>
-        <div class="col-md-2">
+        <div class="col-lg-2">
           <h3 class="text-center">店家營業時間：</h3>
           <p class="content1">星期一 07:30–22:00<br>
             星期二 07:30–22:00<br>
@@ -149,10 +145,10 @@
       </div>
       <hr>
       <div class="storeinfo">
-        <div class="col-md-5">
+        <div class="col-lg-5">
           <img src="images/store-2.jpg" class="img-fluid" alt="">
         </div>
-        <div class="col-md-5">
+        <div class="col-lg-5">
           <h3 class="text-center">店家名稱：</h3>
           <span class="content1">Le Caféisme</span>
           <br>
@@ -164,7 +160,7 @@
           <br>
           <h3 class="text-center">店家電話：</h3><span class="content1">02-2567-3787</span>
         </div>
-        <div class="col-md-2">
+        <div class="col-lg-2">
           <h3 class="text-center">店家營業時間：</h3>
           <p class="content1">星期一 07:30–22:00<br>
             星期二 07:30–22:00<br>
@@ -178,14 +174,13 @@
       <hr>
     </section>
   </div>
-
   <div id="tab_2">
     <section class="container">
       <div class="storeinfo">
-        <div class="col-md-5">
+        <div class="col-lg-5">
           <img src="images/store-3.jpg" class="img-fluid" alt="">
         </div>
-        <div class="col-md-5">
+        <div class="col-lg-5">
           <h3 class="text-center">店家名稱：</h3><span class="content1">MOOD木的生活</span>
           <br>
           <h3 class="text-center">店家編號：</h3><span class="content1">13207</span>
@@ -194,7 +189,7 @@
           <br>
           <h3 class="text-center">店家電話：</h3><span class="content1">02-2567-3787</span>
         </div>
-        <div class="col-md-2">
+        <div class="col-lg-2">
           <h3 class="text-center">店家營業時間：</h3>
           <p class="content1">星期一 07:30–22:00<br>
             星期二 07:30–22:00<br>
@@ -207,7 +202,6 @@
       </div>
     </section>
   </div>
-  <!--底部資訊sec4-->
   <footer class="mt-auto pd-top pd-bottom sec-bg-color"></footer>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>

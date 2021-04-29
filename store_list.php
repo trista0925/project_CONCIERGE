@@ -9,7 +9,7 @@ $mem_mail = $_SESSION['mem_mail'];
 //main
 try {
   /* [ pagenation ] */
-  $max_rows    = 8;                         //一頁最多筆數
+  $max_rows    = 5;                         //一頁最多筆數
   $curr_page   = 0;                         //目前第幾頁(索引號碼)
   if( isset( $_GET['curr_page'] ) ){ $curr_page = $_GET['curr_page']; }
 

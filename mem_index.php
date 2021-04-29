@@ -35,7 +35,7 @@ function errMsg($error) {
 
 <body class="mem-index">
 <section class="container">
-  <div class="row pt-lg-4 pb-lg-4">
+  <div class="row py-lg-4">
     <div class="col-lg-2 offset-lg-5 col-6 offset-3">
       <img src="LOGO/Concierge_1_white.svg" class="img-fluid" alt="">
     </div>

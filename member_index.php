@@ -27,36 +27,31 @@ if (isset($_SESSION['mem_id']) && $_SESSION['mem_id'] != '') {
 
 <body class="member-index">
   <section class="container">
-    <div class="row pt-lg-4 pb-lg-4">
+    <div class="row py-lg-4 py-2">
       <div class="col-lg-2 offset-lg-5 col-6 offset-3">
         <a href="index.php"><img src="LOGO/Concierge_1_white.svg" class="img-fluid" alt=""></a>
       </div>
     </div>
-    <div class="row">
-      <div class="col-lg-3 offset-lg-3 col-8 offset-2">
+    <div class="row align-items-center">
+      <div class="col-lg-3 offset-lg-3 col-6 offset-3">
         <a id="order_list" href="order.php"><img src="images/order2-01.png" class="img-fluid" alt=""></a>
       </div>
-      <div class="col-lg-3 offset-lg-0 col-8 offset-2">
+      <div class="col-lg-3 offset-lg-0 col-6 offset-3">
         <a id="order_list" href="member_list.php"><img src="images/order2-02.png" class="img-fluid" alt=""></a>
       </div>
-    </div>
-    <!--  後台btn  -->
-    <div class="row align-items-center">
-      <div class="col-lg-5 offset-lg-0 col-5 offset-1">
+      <div class="col-lg-2 offset-lg-0 col-6 offset-3">
         <?php if ($mem_level >= 9) {?>
         <a href="order_list.php" name="admin" value=""><img src="images/order2-03.png" class="img-fluid" alt=""></a>
         <?php }?>
       </div>
-      <!-- 回上一頁btn -->
-      <div class="col-lg-2 offset-lg-5 col-2 offset-2">
-        <a href="index.php" class="send-btn" name="back" value="回上一頁">回上一頁</a>
-      </div>
     </div>
-    <div class="row">
-      <div class="col-lg-12 text-center text-white">
+    <div class="row py-lg-4 py-2 justify-content-center">
+      <div class="col-lg-6 text-white text-center">
         <span>會員: <?php echo $mem_name; ?></span>
         <span>帳號: <?php echo $mem_mail; ?></span>
+        <br>
         <a href="member_logout.php" class="logout-submit">登出</a>
+        <a href="index.php" class="back-btn" name="back" value="回上一頁">回上一頁</a>
       </div>
     </div>
   </section>

@@ -39,19 +39,19 @@ function errMsg($error)
 <body>
 <section class="container-fluid">
     <div class="row">
-      <div class="col-lg-5 d-none d-sm-none d-md-block register-leftpic"></div>
+      <div class="col-lg-5 d-none d-sm-none d-lg-block register-leftpic"></div>
       <div class="col-lg-7 register no-any-pd">
         <div class="register-logo"><a href="index.php"><img src="LOGO/Concierge_1_white.svg" class="img-fluid"></a>
         </div>
-          <h3 class="text-center">會員登入 Sign in</h3>
-          <form method="post"  action="member_login_check.php">
+          <h3 class="pt-lg-4 pt-3 text-center">會員登入 Sign in</h3>
+          <form method="post" class="pb-lg-3 pb-1" action="member_login_check.php">
           <input name="mem_mail" id="userID" type="email" required="required" value="" maxlength="50" placeholder="Email / Account 會員帳號">
           <input name="mem_pwd" id="userpw" type="password" required value="" maxlength="20" placeholder="Password 會員密碼">
           <input type="submit" name="loginbtn" class="loginbtn" value="登入">
           </form>
           <p><?php echo errMsg($error); ?></p>
-          <h3 class="text-center">註冊會員 Register</h3>
-          <form method="post" action="member_addmem_ok.php">
+          <h3 class="pt-lg-3 pt-1 text-center">註冊會員 Register</h3>
+          <form method="post" class="pb-lg-4 pb-3" action="member_addmem_ok.php">
           <input name="mem_mail" id="addID" class="mem_mail add-mail" type="email" required="required" value="" maxlength="50" placeholder="Email Address 電子信箱">
           <div id="msg_mail" class="msg_mail"></div>
           <input name="mem_name" id="addName" class="" type="text" value="" maxlength="30" placeholder="Name 會員名稱">
@@ -62,7 +62,7 @@ function errMsg($error)
           <input type="hidden" name="process" value="addmem">
           <input type="submit" name="Registerbtn" class="Registerbtn" value="註冊">
           </form>
-          <a href="index.php" class="backbtn" type="submit" name="back" value="回上一頁">回上一頁</a>
+          <a href="index.php" class="back-btn" name="back" value="回上一頁">回上一頁</a>
       </div>
     </div>
   </section>

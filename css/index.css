@@ -63,27 +63,23 @@
       .pd-bottom-lg {
           padding-bottom: 80px;
       }
-      /* 首頁區塊大標(白底) */
+      /* 首頁區塊大標(白底)、訂單查詢、會員訂單管理 */
       
       h1 {
           color: #005F69;
           font-size: 1.5rem;
           font-weight: bold;
           line-height: 32px;
-          margin-bottom: 30px;
-          text-align: center;
       }
-      /* 首頁區塊大標(藍底) */
+      /* 首頁區塊大標(藍底)、常見問題 */
       
       h2 {
           color: #ECECEC;
           font-size: 1.5rem;
           font-weight: bold;
           line-height: 32px;
-          margin-bottom: 30px;
-          text-align: center;
       }
-      /* 首頁標題(白底)、合作商家、會員註冊、訂單填寫 */
+      /* 首頁標題(白底)、合作商家、會員註冊、完成註冊、訂單填寫、完成訂單、店家管理 */
       
       h3 {
           color: #005F69 !important;
@@ -111,6 +107,7 @@
       
       p {
           font-size: 0.9rem;
+          margin: 0;
       }
       /* 有底色的內文文字 */
       
@@ -145,18 +142,6 @@
               padding-top: 80px;
           }
       }
-      /* footer ===================================== */
-      
-      .footer-logo {
-          width: 40%
-      }
-      /* 手機 */
-      
-      @media(max-width: 1024px) {
-          .footer-logo {
-              width: 80%
-          }
-      }
       /* 首頁index ======================================== */
       /* 有底色的區塊 */
       
@@ -185,8 +170,6 @@
       }
       
       .btn-primary {
-          margin: 15px;
-          padding: 15px;
           background-color: #005F69 !important;
           border-color: #005F69 !important;
       }
@@ -225,18 +208,6 @@
       
       .storeinfo h3 {
           display: inline;
-      }
-      /* 聯絡我們contact ===================================== */
-      
-      .contact-list {
-          padding-top: 100px;
-      }
-      /* 手機 */
-      
-      @media(max-width: 1024px) {
-          .contact-list {
-              padding-top: 20px;
-          }
       }
       /* 常見問題qna ===================================== */
       
@@ -333,11 +304,7 @@
           left: 25%;
           height: 0px;
           font-size: 0.65rem;
-          color: #ff0000;
-      }
-      
-      .backbtn {
-          font-size: 0.75rem;
+          color: #e18989;
       }
       /* 會員首頁member_index ======================================== */
       
@@ -378,6 +345,10 @@
               height: 80px;
               background-color: #005F69;
           }
+          .order h2 {
+              display: inline;
+              vertical-align: middle;
+          }
           .order img {
               margin: 0px 25px;
               height: 80px;
@@ -405,6 +376,11 @@
               height: 120px;
               background-color: #005F69;
               text-align: center;
+          }
+          .order h2 {
+              display: inline;
+              vertical-align: middle;
+              margin: 0px 10px;
           }
           .order img {
               height: 80px;
@@ -506,12 +482,21 @@
       }
       /* 登出 */
       
-      .logout-submit {
-          color: #6db3ba;
+      .logout-submit,
+      .back-btn {
+          font-size: 0.85rem;
+          line-height: 30px;
+          border-radius: 10%;
+          padding: 5px;
+          color: #478187;
+          background-color: #cbe4e6;
       }
       
-      .logout-submit:hover {
-          color: #ECECEC;
+      .logout-submit:hover,
+      .back-btn:hover {
+          text-decoration: none;
+          color: #478187;
+          background-color: #ECECEC;
       }
       /* 完成訂單registerfinish ======================================== */
       /* 頁首 */
@@ -671,8 +656,8 @@
       @media(max-width: 1024px) {
           .member-list {
               width: 100%;
-              height: 140px;
               text-align: center;
+              margin: 20px 0px;
           }
           .member-list h1 {
               display: inline;
@@ -680,7 +665,7 @@
               margin: 0px 10px;
           }
           .member-list img {
-              height: 80px;
+              height: 60px;
               width: 100%;
               max-width: 30%;
               margin: 0px 10px;
@@ -738,4 +723,339 @@
       
       ul.pagination li a:hover:not(.active) {
           background-color: #ECECEC;
+      }
+      /* 會員訂單管理order_list ======================================== */
+      /* 桌機 */
+      
+      @media(min-width: 1025px) {
+          .order-list-left {
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              min-height: 100vh;
+              background-color: #005F69;
+          }
+          .order-list-right {
+              margin: 50px auto;
+          }
+          .order-list-right h1 {
+              display: inline;
+              vertical-align: middle;
+          }
+          .order-list-head {
+              float: right;
+          }
+          .order-list-head span {
+              font-size: 0.85rem;
+              letter-spacing: 0.1rem;
+              color: #005F69;
+              padding: 5px;
+          }
+          .order-list-menu {
+              width: 45%;
+          }
+          .order-pic {
+              width: 180px;
+          }
+      }
+      /* 手機 */
+      
+      @media(max-width: 1024px) {
+          .order-list-right {
+              text-align: center;
+          }
+          .order-list-right h1 {
+              padding-top: 30px;
+          }
+          .order-list-head {
+              padding-bottom: 30px;
+          }
+          .order-list-head span {
+              font-size: 0.85rem;
+              letter-spacing: 0.1rem;
+              color: #005F69;
+              padding: 5px;
+          }
+          .order-list-menu {
+              display: flex;
+              background-color: #005F69;
+          }
+          .order-list-menu img {
+              width: 130px;
+          }
+          .order-pic {
+              width: 150px;
+          }
+      }
+      
+      .mask {
+          position: fixed;
+          left: 0;
+          top: 0;
+          width: 100%;
+          height: 100%;
+          background-color: rgba(0, 0, 0, 0.5);
+          display: none;
+      }
+      /* 桌機 */
+      
+      @media(min-width: 1025px) {
+          .btn-mask {
+              width: 60%;
+              height: 70%;
+              position: absolute;
+              top: 0;
+              right: 0;
+              bottom: 0;
+              left: 0;
+              margin: auto;
+              background-color: #fff;
+              display: none;
+              border-radius: 20px;
+          }
+      }
+      /* 手機 */
+      
+      @media(max-width: 1024px) {
+          .btn-mask {
+              width: 100%;
+              height: 100%;
+              position: absolute;
+              top: 0;
+              right: 0;
+              bottom: 0;
+              left: 0;
+              margin: auto;
+              background-color: #ECECEC;
+              display: none;
+              padding: 20px;
+          }
+      }
+      
+      .btn-mask i {
+          padding: 10px 15px 0px 0px;
+          position: absolute;
+          right: 0;
+      }
+      
+      .btn-mask p {
+          display: inline;
+          color: #005F69;
+          font-size: 0.85rem;
+          font-weight: bold;
+          line-height: 34px;
+      }
+      
+      .mask-content {
+          text-align: center;
+      }
+      /* 店家管理store_list ======================================== */
+      /* 按鈕 */
+      
+      .look-btn,
+      .edit-btn,
+      .delete-btn,
+      .add-btn {
+          text-align: center;
+          display: inline;
+      }
+      
+      .look-btn a,
+      .edit-btn a,
+      .delete-btn a {
+          width: 60px;
+          height: 35px;
+          line-height: 35px;
+          border-radius: 50px;
+          background-color: #005F69;
+          color: #ECECEC;
+          font-size: 0.9rem;
+      }
+      
+      .look-btn a:hover,
+      .edit-btn a:hover,
+      .delete-btn a:hover {
+          text-decoration: none;
+          outline: none;
+          color: #ECECEC;
+          background-color: #478187;
+          cursor: pointer;
+      }
+      
+      .add-btn a {
+          width: 90px;
+          height: 35px;
+          line-height: 35px;
+          border-radius: 50px;
+          background-color: #cbe4e6;
+          color: #478187;
+          font-size: 0.9rem;
+      }
+      
+      .add-btn a:hover {
+          text-decoration: none;
+          outline: none;
+          color: #478187;
+          background-color: #ECECEC;
+          cursor: pointer;
+      }
+      /* 隱藏區塊-新增 */
+      /* 桌機 */
+      
+      @media(min-width: 1025px) {
+          .add-mask {
+              width: 60%;
+              height: 60%;
+              position: absolute;
+              top: 0;
+              right: 0;
+              bottom: 0;
+              left: 0;
+              margin: auto;
+              background-color: #fff;
+              display: none;
+              border-radius: 20px;
+          }
+      }
+      /* 手機 */
+      
+      @media(max-width: 1024px) {
+          .add-mask {
+              width: 100%;
+              height: 85%;
+              position: absolute;
+              top: 0;
+              right: 0;
+              bottom: 0;
+              left: 0;
+              margin: auto;
+              background-color: #ECECEC;
+              display: none;
+              padding: 20px;
+          }
+      }
+      
+      .add-mask i,
+      .check-mask i,
+      .edit-mask i,
+      .del-mask i {
+          padding: 10px 15px 0px 0px;
+          position: absolute;
+          right: 0;
+      }
+      
+      .add-mask p,
+      .check-mask p,
+      .edit-mask p,
+      .del-mask p {
+          display: inline;
+          color: #005F69;
+          font-size: 0.85rem;
+          font-weight: bold;
+          line-height: 34px;
+      }
+      /* 隱藏區塊-查看 */
+      /* 桌機 */
+      
+      @media(min-width: 1025px) {
+          .check-mask {
+              width: 30%;
+              height: 50%;
+              position: absolute;
+              top: 0;
+              right: 0;
+              bottom: 0;
+              left: 0;
+              margin: auto;
+              background-color: #fff;
+              display: none;
+              border-radius: 20px;
+          }
+      }
+      /* 手機 */
+      
+      @media(max-width: 1024px) {
+          .check-mask {
+              width: 100%;
+              height: 50%;
+              position: absolute;
+              top: 0;
+              right: 0;
+              bottom: 0;
+              left: 0;
+              margin: auto;
+              background-color: #ECECEC;
+              display: none;
+              padding: 20px;
+          }
+      }
+      /* 隱藏區塊-編輯 */
+      /* 桌機 */
+      
+      @media(min-width: 1025px) {
+          .edit-mask {
+              width: 60%;
+              height: 60%;
+              position: absolute;
+              top: 0;
+              right: 0;
+              bottom: 0;
+              left: 0;
+              margin: auto;
+              background-color: #fff;
+              display: none;
+              border-radius: 20px;
+          }
+      }
+      /* 手機 */
+      
+      @media(max-width: 1024px) {
+          .edit-mask {
+              width: 100%;
+              height: 85%;
+              position: absolute;
+              top: 0;
+              right: 0;
+              bottom: 0;
+              left: 0;
+              margin: auto;
+              background-color: #ECECEC;
+              display: none;
+              padding: 20px;
+          }
+      }
+      /* 隱藏區塊-刪除 */
+      /* 桌機 */
+      
+      @media(min-width: 1025px) {
+          .del-mask {
+              width: 30%;
+              height: 50%;
+              position: absolute;
+              top: 0;
+              right: 0;
+              bottom: 0;
+              left: 0;
+              margin: auto;
+              background-color: #fff;
+              display: none;
+              border-radius: 20px;
+          }
+      }
+      /* 手機 */
+      
+      @media(max-width: 1024px) {
+          .del-mask {
+              width: 100%;
+              height: 50%;
+              position: absolute;
+              top: 0;
+              right: 0;
+              bottom: 0;
+              left: 0;
+              margin: auto;
+              background-color: #ECECEC;
+              display: none;
+              padding: 20px;
+          }
       }

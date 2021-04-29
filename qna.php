@@ -13,12 +13,10 @@
 </head>
 
 <body class="d-flex flex-column">
-  <!--導覽列-->
   <header></header>
-  <!--常見問題-->
   <section class="container-fluid">
     <div class="row">
-      <div class="col-md-12 qna">
+      <div class="col-lg-12 qna">
         <div class="accordion" id="accordionExample">
           <div class="card">
             <div class="card-header" id="headingOne">
@@ -140,8 +138,6 @@
       </div>
     </div>
   </section>
-
-  <!--底部資訊-->
   <footer class="mt-auto pd-top pd-bottom sec-bg-color"></footer>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
