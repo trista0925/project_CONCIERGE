@@ -17,7 +17,7 @@
       <a href="index.php"><img src="LOGO/Concierge_1_white.svg" class="img-fluid"></a>
       <div class="row order-fin-btn justify-content-center">
       <h3>完成訂單</h3>
-      <a href="member_list.php" type="submit" name="back" value="">回訂單管理</a>
+      <a href="member_list.php" type="submit" value="">回訂單管理</a>
       </div>
   </section>
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" crossorigin="anonymous"></script>

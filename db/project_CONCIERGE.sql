@@ -17,7 +17,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- 資料庫： `project4`
+-- 資料庫： `project_concierge`
 --
 
 -- --------------------------------------------------------
@@ -62,14 +62,6 @@ CREATE TABLE `mb` (
   `mb_time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
---
--- 資料表的匯出資料 `mb`
---
-
-INSERT INTO `mb` (`mb_id`, `mb_name`, `mb_content`, `mb_time`) VALUES
-(1, 'TEST0', 'TEST0TEST0TEST0', '2021-01-24 09:36:48'),
-(2, 'TEST0-2', 'TEST0-2TEST0-2TEST0-2TEST0-2TEST0-2', '2021-01-24 09:36:53');
-
 -- --------------------------------------------------------
 
 --
@@ -90,11 +82,8 @@ CREATE TABLE `mem` (
 --
 
 INSERT INTO `mem` (`mem_id`, `mem_name`, `mem_mail`, `mem_pwd`, `mem_level`, `mem_chkcode`) VALUES
-(1, 'ts009', 'ts009@gmail.com', 'ts1234', 9, NULL),
-(2, 'test001', 'test001@gmail.com', 'ts1234', 2, NULL),
-(3, 'test002', 'test002@gmail.com', 'ts1234', 2, NULL),
-(4, 'test003', 'test003@gmail.com', 'ts1234', 2, NULL),
-(5, 'ts999', 'ts999@gmail.com', 'ts1234', 9, NULL);
+(1, '999', '999@gmail.com', '999', 9, NULL),
+(2, '001', '001@gmail.com', '001', 1, NULL);
 
 -- --------------------------------------------------------
 
@@ -124,7 +113,8 @@ CREATE TABLE `orderlist` (
 --
 
 INSERT INTO `orderlist` (`order_id`, `order_mem_id`, `order_name`, `order_mail`, `order_store_id`, `order_store_name`, `order_phone`, `order_tele`, `order_size`, `order_time_arrive`, `order_time_get`, `order_time_buy`, `order_pic`, `order_memo`) VALUES
-(28, 1, 'ts009', 'ts009@gmail.com', 38, 'MOOD 木的生活 中山店', '0911111111', '07777777', 'S型:50公分以下，20公斤以內', '2021-02-18 00:00:00', '2021-02-19 00:00:00', '2021-02-18 18:38:43', NULL, NULL);
+(60, 1, '王小明', '999@gmail.com', 38, 'MOOD 木的生活 中山店', '0927756583', '0223334566', 'S型:50公分以下，20公斤以內', '2021-04-30 08:15:00', '2021-05-02 08:15:00', '2021-04-30 00:15:45', 'order_60', '請幫我放進冷凍庫'),
+(61, 1, '林小美', '999@gmail.com', 39, 'MOOD 木的生活 松山店', '0975627365', '034421567', 'M型:100公分以下，20公斤以內', '2021-04-28 08:32:00', '2021-05-07 08:32:00', '2021-04-30 00:32:56', 'order_61_s', '易碎物品請勿重壓');
 
 -- --------------------------------------------------------
 
@@ -148,14 +138,14 @@ CREATE TABLE `store` (
 --
 
 INSERT INTO `store` (`store_id`, `store_name`, `store_area_id`, `store_phone`, `store_address`, `store_time_open`, `store_time_add`, `store_memo`) VALUES
-(38, 'MOOD 木的生活 中山店', 1, '0911555555', 'MOOD 木的生活 中山店', '早上10點到下午5點', '2021-02-18 07:45:57', ''),
-(40, 'MOOD 木的生活 松山店', 2, '0911555555', 'MOOD 木的生活 松山店', '早上10點到下午5點', '2021-02-18 08:29:23', ''),
-(41, '聽咕 最棒!2', 1, '0911555555', '聽咕 TEAM GROUP 中山店', '早上10點到下午5點', '2021-02-18 08:30:44', ''),
-(42, 'zoeywin_photo 中山店', 1, '0911111111', 'zoeywin_photo 中山店', '', '2021-02-18 14:53:15', NULL),
-(43, 'Le Caféisme 中山店', 1, '0911111111', 'Le Caféisme 中山店', '', '2021-02-18 14:53:15', NULL),
-(44, '聽咕 TEAM GROUP 信義店', 3, '0913333333', '聽咕 信義店', '', '2021-02-18 14:53:15', ''),
-(45, 'zoeywin_photo 信義店', 3, '0933333333', 'zoeywin_photo 信義店', '', '2021-02-18 14:53:15', NULL),
-(46, 'Le Caféisme 信義店', 3, '0933333333', 'Le Caféisme 信義店', '', '2021-02-18 14:53:15', NULL);
+(38, 'MOOD 木的生活 中山店', 1, '0912345678', '台北市中山區錦州街215號', '09:30–17:00', '2021-02-18 07:45:57', ''),
+(39, 'MOOD 木的生活 松山店', 2, '0917653688', '台北市松山區南京東路三段248號', '10:30–22:00', '2021-02-18 08:29:23', ''),
+(40, '聽咕 TEAM GROUP 中山店', 1, '0911555555', '台北市中山區林森北路413號', '10:00–22:00', '2021-02-18 08:30:44', ''),
+(41, '聽咕 TEAM GROUP 信義店', 3, '0987654321', '台北市信義區信義路五段5號', '10:30–23:00', '2021-02-18 14:53:15', ''),
+(42, 'zoeywin_photo 中山店', 1, '0911245679', '台北市中山區長春路176號', '07:30–22:00', '2021-04-24 21:31:28', ''),
+(43, 'zoeywin_photo 信義店', 3, '0933256664', '台北市信義區仁愛路四段505號', '12:30–23:00', '2021-04-24 21:31:02', ''),
+(44, 'Le Caféisme 中山店', 1, '0911114333', '台北市中山區民權西路3號', '07:30–22:00', '2021-04-24 21:31:43', ''),
+(45, 'Le Caféisme 信義店', 3, '0933333333', 'Le Caféisme 信義店', '07:00–22:00', '2021-04-24 21:30:59', '');
 
 --
 -- 已匯出資料表的索引
@@ -199,7 +189,7 @@ ALTER TABLE `store`
 -- 使用資料表 AUTO_INCREMENT `area`
 --
 ALTER TABLE `area`
-  MODIFY `area_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=30;
+  MODIFY `area_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 --
 -- 使用資料表 AUTO_INCREMENT `mb`
 --
@@ -209,17 +199,17 @@ ALTER TABLE `mb`
 -- 使用資料表 AUTO_INCREMENT `mem`
 --
 ALTER TABLE `mem`
-  MODIFY `mem_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `mem_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 --
 -- 使用資料表 AUTO_INCREMENT `orderlist`
 --
 ALTER TABLE `orderlist`
-  MODIFY `order_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=30;
+  MODIFY `order_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=62;
 --
 -- 使用資料表 AUTO_INCREMENT `store`
 --
 ALTER TABLE `store`
-  MODIFY `store_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=47;
+  MODIFY `store_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=71;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

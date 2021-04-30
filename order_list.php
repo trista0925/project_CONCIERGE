@@ -78,25 +78,28 @@ try {
     <div class="row">
       <div class="col-lg-4 order-lg-1 order-2 order-list-left">
         <div class="order-list-menu">
-        <img src="LOGO/Concierge_1_white.svg" class="img-fluid p-3 my-2">
+        <a href="index.php"> <img src="LOGO/Concierge_1_white.svg" class="img-fluid p-3 my-2"></a>
         <a href="order_list.php"><img src="images/Concierge_order_list.png" class="img-fluid my-2"></a>
         <a href="store_list.php"><img src="images/Concierge_order_list01.png" class="img-fluid my-2"></a>
         </div>
       </div>
       <!--"右側會員訂單管理內容區塊-->
       <div class="col-lg-7 order-lg-2 order-1 order-list-right">
+      <div class="order-list-head">
         <h1>會員訂單管理</h1>
         <!--"管理者"（登入身份）須由後端帶入-->
-        <div class="order-list-head">
+        <div class="order-list-admin">
         <span>管理者：<?php if ($mem_mail) {echo $mem_mail;}?></span>
         <a href="member_logout.php" class="logout-submit">登出</a>
         </div>
+        </div>
         <!--訂單顯示table區-->
         <table class="table table-striped">
-            <thead class="table-primary"> 
+            <thead class="table-primary">
               <th>訂單編號</th>
               <th>會員姓名</th>
-              <th colspan="2">取件店家名稱</th>
+              <th>取件店家名稱</th>
+              <th></th>
             </thead>
             <tbody>
               <?php foreach ($order_list as $key => $item) {?>
@@ -104,7 +107,7 @@ try {
                   <td><?php echo $item['order_id'] ?></td>
                   <td><?php echo $item['order_name'] ?></td>
                   <td><?php echo $item['order_store_name'] ?></td>
-                  <td><div class="order-btn"><a href="javascript:;" type="submit" name="back" value="訂單內容" onclick="orderModal('<?php echo $key ?>')">訂單內容</a></div></td>
+                  <td><div class="order-btn"><a href="javascript:;" type="submit" value="訂單內容" onclick="orderModal('<?php echo $key ?>')">訂單內容</a></div></td>
                 </tr>
                 <?php }?>
             </tbody>
@@ -113,28 +116,28 @@ try {
         <div class="pagenumber">
           <ul class="pager pagination">
             <?php if ($curr_page > 0) {
-            echo '<li><a href="?page=' . $page_file . '&curr_page=0"><i class="fa fa-angle-double-left"></i></a>';
-            echo '<a href="?page=' . $page_file . '&curr_page=' . ($curr_page - 1) . '">
+    echo '<li><a href="?page=' . $page_file . '&curr_page=0"><i class="fa fa-angle-double-left"></i></a>';
+    echo '<a href="?page=' . $page_file . '&curr_page=' . ($curr_page - 1) . '">
                   <i class="fa fa-angle-left"></i></a></li>';
-                }
-                  for ($i = 0; $i < $total_pages; $i++) {
-                    if ($i == $curr_page) {
-                      echo '<li><a href="javascript:;" class="current active">' . ($i + 1) . '</a></li>';
-                    } else {
-                      echo '<li><a href="?page=' . $page_file . '&curr_page=' . $i . '">';
-                      echo $i + 1;
-                      echo '</a></li>';
-                    } //if end
-                  } //for end
-                  if ($curr_page < $total_pages - 1) {
-                    echo '<li><a href="?page=' . $page_file . '&curr_page=' . ($curr_page + 1) . '">
+}
+for ($i = 0; $i < $total_pages; $i++) {
+    if ($i == $curr_page) {
+        echo '<li><a href="javascript:;" class="current active">' . ($i + 1) . '</a></li>';
+    } else {
+        echo '<li><a href="?page=' . $page_file . '&curr_page=' . $i . '">';
+        echo $i + 1;
+        echo '</a></li>';
+    } //if end
+} //for end
+if ($curr_page < $total_pages - 1) {
+    echo '<li><a href="?page=' . $page_file . '&curr_page=' . ($curr_page + 1) . '">
                     <i class="fa fa-angle-right"></i></a></li>';
-                    echo '<li><a href="?page=' . $page_file . '&curr_page=' . ($total_pages - 1) . '">
+    echo '<li><a href="?page=' . $page_file . '&curr_page=' . ($total_pages - 1) . '">
                     <i class="fa fa-angle-double-right"></i></a></li>';
-                  }?>
+}?>
           </ul>
-          <div class="order-btn pd-top pd-bottom">
-            <a href="member_index.php" type="submit" name="back" value="回上一頁">回上一頁</a>
+          <div class="order-btn pt-4">
+            <a href="member_index.php" type="submit" value="回上一頁">回上一頁</a>
           </div>
         </div>
       </div>
@@ -145,15 +148,13 @@ try {
       <div class="btn-mask">
         <i class="fa fa-times fa-2x" aria-hidden="true"></i>
         <div class="mask-content pt-lg-5 pb-lg-2 pt-3">
-            <h1>訂單編號【<span class="order-id"></span>】</h1>
+            <h1>訂單編號 <span class="order-id"></span></h1>
         </div>
         <div class="row justify-content-center">
-          <div class="col-lg-4">
+          <div class="col-lg-5">
             <p>填單時間：</p><span class="order-time-buy"></span>
             <br>
             <p>會員姓名：</p><span class="order-name"></span>
-            <br>
-            <p>市話：</p><span class="order-tele"></span>
             <br>
             <p>手機：</p><span class="order-phone"></span>
             <br>
@@ -161,17 +162,17 @@ try {
             <br>
             <p>商品大小：</p><span class="order-size"></span>
             <br>
-            <p>備註：</p><span class="order-memo"></span>
-          </div>
-          <div class="col-lg-4">     
             <p>取件店家代號：</p><span class="order-store-id"></span>
             <br>
             <p>取件店家名稱：</p><span class="order-store-name"></span>
-            <br>   
+            <br>
             <p>抵達店家時間：</p><span class="order-time-arrive"></span>
             <br>
             <p>預計取件時間：</p><span class="order-time-get"></span>
             <br>
+            <p>備註：</p><span class="order-memo"></span>
+          </div>
+          <div class="col-lg-5">
             <div><p>購物證明</p></div>
             <img class="order-pic" src="">
           </div>
@@ -200,7 +201,7 @@ console.log(RT.content)
   }
 </script>
 <script>
-  $(".table a").click(function() {
+  $(".table .order-btn").click(function() {
     var href = $(this).attr("href");
     $('.btn-mask').fadeIn(1000);
     $('.mask').fadeIn(500);

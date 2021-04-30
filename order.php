@@ -109,8 +109,8 @@ try {
         <div class="col-lg-3">
         <p>購物證明</p>
           <form enctype="multipart/form-data" method="POST" action="order_process.php" id="order_file_form">
-          <div class="custom-file">    
-            <input type="file" class="custom-file-input" id="fileUpload" name="order_pic">    
+          <div class="custom-file">
+            <input type="file" class="custom-file-input" id="fileUpload" name="order_pic">
             <label class="custom-file-label" for="fileUpload" style="overflow: hidden;">選擇檔案</label>
           </div>
           <input type="hidden" class="hidden-order-id" name="order_id" value="">
@@ -205,7 +205,7 @@ try {
   <div class="order-map" id="changingpicture"><img src="" id="Mymap">
   </div>
   <div class="order-btn pd-top pd-bottom">
-  <a href="member_index.php" type="submit" name="back" value="回上一頁">回上一頁</a>
+  <a href="member_index.php" type="submit" value="回上一頁">回上一頁</a>
   <a href="javascript:;" id="sendbtn" type="submit" name="send" value="送出">送出</a>
   </div>
   </body>

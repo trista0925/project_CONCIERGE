@@ -162,7 +162,7 @@ if ($curr_page < $total_pages - 1) {
 }?>
         </ul>
         <div class="order-btn pd-top pd-bottom">
-        <a href="member_index.php" type="submit" name="back" value="回上一頁">回上一頁</a>
+        <a href="member_index.php" type="submit" value="回上一頁">回上一頁</a>
       </div>
       </div>
   </section>
