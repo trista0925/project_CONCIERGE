@@ -1,24 +1,6 @@
 <?php
-require_once('shared/conn_PDO.php');
+require_once 'shared/conn_PDO.php';
 
-if ( isset( $_GET['msg'] ) && $_GET['msg'] != '' ) {
-  $error = $_GET['msg'];
-}
-
-if ( isset( $_SESSION['mem_mail'] ) && $_SESSION['mem_mail'] != '' ) {
-  header('Location: order_list.php');
-}
-function errMsg($error) {
-  $msg = '';
-  switch($error) {
-    case 1:
-      $msg = '帳號或密碼錯誤';
-      break;
-    case 2:
-      $msg = '請輸入管理員帳號';
-  }
-  return $msg;
-}
 ?>
 <!DOCTYPE html>
 <html lang="zh-Hant-TW">
@@ -37,7 +19,7 @@ function errMsg($error) {
 <section class="container">
   <div class="row py-lg-4">
     <div class="col-lg-2 offset-lg-5 col-6 offset-3">
-      <img src="LOGO/Concierge_1_white.svg" class="img-fluid" alt="">
+    <a href="index.php"><img src="LOGO/Concierge_1_white.svg" class="img-fluid" alt=""></a>
     </div>
   </div>
   <div class="row">
@@ -48,7 +30,9 @@ function errMsg($error) {
             <input type="text" name="mem_pwd" class="form-control" required="required" value="" maxlength="20" placeholder="請輸入管理者密碼">
             <input type="submit" name="loginbtn" class="loginbtn" value="登入">
           </div>
-          <p class="errmsg"><?php echo errMsg($error); ?></p>
+          <p class="errmsg-mem"><?php
+if (isset($_GET['msg']) && $_GET['msg'] == 1) {echo '帳號或密碼錯誤';}
+if (isset($_GET['msg']) && $_GET['msg'] == 2) {echo '請登入管理員帳號';}?></p>
       </form>
     </div>
   </div>
@@ -58,4 +42,3 @@ function errMsg($error) {
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
 </body>
 </html>
- 

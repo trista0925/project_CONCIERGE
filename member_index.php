@@ -7,7 +7,7 @@ if (isset($_SESSION['mem_id']) && $_SESSION['mem_id'] != '') {
     $mem_level = $_SESSION['mem_level'];
     // var_dump($mem_level);
 } else {
-    header('Location: register.php?msg=2');
+    header('Location: register.php');
 }
 
 ?>

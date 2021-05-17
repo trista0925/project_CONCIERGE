@@ -2,7 +2,7 @@
 require_once 'shared/conn_PDO.php';
 session_start();
 if (!isset($_SESSION['mem_id']) || $_SESSION['mem_id'] == '') {
-    header('Location: index.php?msg=2');
+    header('Location: mem_index.php');
 }
 
 $mem_mail = $_SESSION['mem_mail'];
@@ -30,7 +30,7 @@ try {
     $sql_str = "SELECT store.*
   FROM store
   $where
-  ORDER BY store.store_id
+  ORDER BY store.store_id DESC
   LIMIT $first_row, $max_rows";
     $RS_storelist = $conn->query($sql_str);
     $store_list = array();

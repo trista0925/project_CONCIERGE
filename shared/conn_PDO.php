@@ -1,9 +1,19 @@
 <?php
+
+/***** localhost *****/
 $db_hostname = 'localhost'; //資料庫主機名稱
 $db_username = 'root'; //登入資料庫的管理者的帳號
 $db_password = '123456789'; //登入密碼
 $db_name = 'project_concierge'; //使用的資料庫
 $db_charset = 'utf8'; //設定字元編碼
+
+/***** 免費空間
+$db_hostname = 'sql207.byethost7.com'; //資料庫主機名稱
+$db_username = 'b7_28557386'; //登入資料庫的管理者的帳號
+$db_password = 'chang0925'; //登入密碼
+$db_name = 'b7_28557386_concierge'; //使用的資料庫
+$db_charset = 'utf8'; //設定字元編碼
+ *****/
 
 //建立PDO的指定工作
 $dsn = "mysql:host=$db_hostname;dbname=$db_name;charset=$db_charset";

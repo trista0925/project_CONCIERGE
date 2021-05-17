@@ -17,7 +17,7 @@
   <section class="order-fin container-fluid no-any-pd wow animate__animated animate__fadeIn animate__slower">
       <a href="index.php"><img src="LOGO/Concierge_1_white.svg" class="img-fluid"></a>
       <div class="row order-fin-btn justify-content-center">
-      <h3>完成註冊</h3>
+      <h3>註冊成功</h3>
       <h3>請重新登入</h3>
       <a href="index.php" type="submit" value="">回首頁</a>
       </div>

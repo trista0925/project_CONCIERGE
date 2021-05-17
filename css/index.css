@@ -302,10 +302,15 @@
           cursor: pointer;
       }
       
-      .msg_mail {
+      .msg_mail,
+      .msg_pwd,
+      .msg_confirm_pwd,
+      .errmsg-register {
+          width: 60%;
+          margin: auto;
           position: relative;
           top: -15px;
-          left: 25%;
+          text-align: right;
           height: 0px;
           font-size: 0.65rem;
           color: #e18989;
@@ -615,7 +620,7 @@
           cursor: pointer;
       }
       
-      .errmsg {
+      .errmsg-mem {
           text-align: center;
           color: #ECECEC;
       }

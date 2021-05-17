@@ -2,7 +2,7 @@
 require_once 'shared/conn_PDO.php';
 session_start();
 if (!isset($_SESSION['mem_id']) || $_SESSION['mem_id'] == '') {
-    header('Location: register.php?msg=2');
+    header('Location: register.php');
 }
 /* [ mem_list content ] */
 $mem_id = $_SESSION['mem_id'];

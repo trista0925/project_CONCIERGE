@@ -1,5 +1,33 @@
 <?php
 require_once 'shared/conn_PDO.php';
+
+//判斷是否由mail確認回來的(如果是,則會員身份等級改為2)
+if (isset($_GET['mailok']) && $_GET['mailok'] == 1) {
+    $mem_mail = $_GET['mem_mail'];
+    $mem_chkcode = ['mem_chkcode'];
+
+    try {
+        //準備SQL語法>建立預處理器=========================
+        $sql_str = "UPDATE mem SET mem_level= 2
+                WHERE mem_mail = :mem_mail AND mem_chkcode = :mem_chkcode";
+        $stmt = $conn->prepare($sql_str);
+
+        //接收資料===========================================
+        $mem_mail = $_GET['mem_mail'];
+        $mem_chkcode = $_GET['mem_chkcode'];
+
+        //綁定資料===========================================
+        $stmt->bindParam(':mem_mail', $mem_mail);
+        $stmt->bindParam(':mem_chkcode', $mem_chkcode);
+
+        //執行==============================================
+        $stmt->execute();
+        header('Location:register.php');
+    } catch (PDOException $e) {
+        die("Errpr!: " . $e->getMessage());
+    }
+}
+
 session_start();
 
 if (isset($_GET['msg']) && $_GET['msg'] != '') {
@@ -7,19 +35,6 @@ if (isset($_GET['msg']) && $_GET['msg'] != '') {
 }
 if (isset($_SESSION['mem_id']) && $_SESSION['mem_id'] != '') {
     header('Location: member_index.php');
-}
-
-function errMsg($error)
-{
-    $msg = '';
-    switch ($error) {
-        case 1:
-            $msg = '帳號或密碼錯誤';
-            break;
-        case 2:
-            $msg = '請輸入會員帳號';
-    }
-    return $msg;
 }
 ?>
 <!DOCTYPE html>
@@ -47,18 +62,20 @@ function errMsg($error)
           <form method="post" class="pb-lg-3 pb-1" action="member_login_check.php">
           <input name="mem_mail" id="userID" type="email" required="required" value="" maxlength="50" placeholder="Email / Account 會員帳號">
           <input name="mem_pwd" id="userpw" type="password" required value="" maxlength="20" placeholder="Password 會員密碼">
+          <p class="errmsg-register"><?php
+if (isset($_GET['msg']) && $_GET['msg'] == 1) {echo '帳號或密碼錯誤';}
+if (isset($_GET['msg']) && $_GET['msg'] == 2) {echo 'Email尚未驗證，請至註冊信箱驗證啟用';}?></p>
           <input type="submit" name="loginbtn" class="loginbtn" value="登入">
           </form>
-          <p><?php echo errMsg($error); ?></p>
           <h3 class="pt-lg-3 pt-1 text-center">註冊會員 Register</h3>
           <form method="post" class="pb-lg-4 pb-3" action="member_addmem_ok.php">
-          <input name="mem_mail" id="addID" class="mem_mail add-mail" type="email" required="required" value="" maxlength="50" placeholder="Email Address 電子信箱">
+          <input name="mem_mail" id="mem_mail" class="mem_mail" type="email" required="required" value="" maxlength="50" placeholder="Email Address 電子信箱">
           <div id="msg_mail" class="msg_mail"></div>
           <input name="mem_name" id="addName" class="" type="text" value="" maxlength="30" placeholder="Name 會員名稱">
-          <input name="mem_pwd" id="password" class="mem_pwd" type="password" required="required" value="" maxlength="20" placeholder="Password 會員密碼(6至20碼英數字)">
-          <div id="msg_mail" class="msg_pwd"></div>
-          <input name="addPWagain" id="confirm_password" class="confirm_pwd" type="password" required="required" value="" maxlength="20" placeholder="Password 再次輸入會員密碼">
-          <div class="msg_confirm_pwd"></div>
+          <input name="mem_pwd" id="mem_pwd" class="mem_pwd" type="password" required="required" value="" maxlength="20" placeholder="Password 會員密碼(6至20碼英數字)">
+          <div id="msg_pwd" class="msg_pwd"></div>
+          <input name="confirm_pwd" id="confirm_pwd" class="confirm_pwd" type="password" required="required" value="" maxlength="20" placeholder="Password 再次輸入會員密碼">
+          <div id="msg_confirm_pwd" class="msg_confirm_pwd"></div>
           <input type="hidden" name="process" value="addmem">
           <input type="submit" name="Registerbtn" class="Registerbtn" value="註冊">
           </form>
@@ -70,68 +87,6 @@ function errMsg($error)
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
   <script src="js/jquery-3.5.1.min.js"></script>
-<script>
-  var chk_mail = $(".add-mail"); //帳號
-  var chk_pwd = $("#addPW"); //密碼
-  var chk_confirm_pwd = $("#addPWagain"); //密碼再次輸入
-  // var chk_code         = $("#chkcode");       //驗證碼的輸入
-
-  var test_mail = false; //設定帳號的輸入是否正確,預設為否
-  var test_pwd = false; //設定密碼的輸入是否正確,預設為否
-  var test_confirm_Pwd = false; //設定確認密碼的輸入是否正確,預設為否
-  // var test_chk_code    = false;  //設定驗證碼的輸入是否正確,預設為否
-
-  var msg_blue_start = '<span style="color:#478187">';
-  var msg_blue_end = '</span>';
-  var m1 = '<span class="str1"></span>';
-  var m0 = '<span class="str0"></span>';
-
-  //--------檢測帳號--------------------------------------------------------
-  //當游標離開帳號欄位時
-  chk_mail.bind("blur", function() {
-    //假如欄位內的值不是空的
-    if ($(this).val() != "") {
-      console.log($(this).val())
-      var chk_mail_val = $(this).val(); //取得目前輸入的內容值
-      //以 reg 變數設定檢查E-Mail格式的正則表達式(描述字元規則的檢查物件)
-      var reg = /^\w+((-\w+)|(\.\w+))*\@[A-Za-z0-9]+((\.|-)[A-Za-z0-9]+)*\.[A-Za-z]+$/;
-
-      //以 reg 物件檢查 chk_mail_val, 符合規則得到true
-      if (!reg.test(chk_mail_val)) {
-        $('#msg_mail').html('帳號格式不符合E-Mail！');
-        test_mail = false;
-      } else {
-
-        //使用AJAX技術取得外部mem_chk_member.php來處理判斷帳號-----------------------------
-        $.ajax({
-          //呼叫 mem_chk_member.php 進來工作, 以POST方式傳入 chk_mail_val 變數的值
-          url: 'member_chk_member.php',
-          type: 'post',
-          data: {
-            mem_mail: chk_mail_val
-          }
-
-          //完成ajax的工作後, 執行以下function-------------------------------------------
-        }).done(function(msg) { //mem_chk_member.php完成工作會回傳值, 以 msg 收下回傳的值
-          console.log('--------' + msg);
-          if (msg == 1) { //當收到的值==1, 表示資料庫中已有此帳號
-            $('#msg_mail').html('帳號已存在,不能使用！');
-            test_mail = false;
-          } else {
-            $('#msg_mail').html(msg_blue_start + '帳號可以使用！' + msg_blue_end);
-            test_mail = true;
-          }
-          //alert('-----'+msg+'------');
-        }); //done end ajax end
-      } //if chk end
-    } //if 空格 end
-  }); //blue end
-
-  //當游標點入帳號欄位時
-  chk_mail.bind("focus", function() {
-    $('#msg_mail').html(''); //將訊息區塊的內容清除
-  })
-
-</script>
+  <script src="js/check_mem_mail.js"></script>
 </body>
 </html>
