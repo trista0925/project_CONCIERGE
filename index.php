@@ -21,7 +21,7 @@ try {
   <meta charset="UTF-8">
   <title>行動管理員 CONCIERGE</title>
   <link rel="icon" href="LOGO/Concierge_icon.ico">
-  <link rel="stylesheet" href="bootstrap-4.2.1-dist/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
   <link rel="stylesheet" href="css/index.css">
   <link rel="stylesheet" href="css/animate.css">
 </head>
@@ -30,7 +30,7 @@ try {
   <header></header>
   <section class="container-fluid">
     <div class="row">
-      <img class="img-fluid card-img-top" src="images/slider.jpg" alt="">
+    <img src="images/slider.jpg" class="card-img h-100" alt="">
     </div>
     <div class="row btnset-index justify-content-center">
       <a href="store.php" class="btn btn-primary p-3 m-3 btn-lg active" role="button" aria-pressed="true">查看合作商家</a>
@@ -130,7 +130,9 @@ try {
     RT.content = <?php echo json_encode($rt_content); ?> || {}
   </script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-  <script src="bootstrap-4.2.1-dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
   <script src="js/jquery-3.5.1.min.js"></script>
   <script src="js/loadpage.js"></script>
   <script src="js/wow.min.js"></script>
