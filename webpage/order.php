@@ -2,7 +2,7 @@
 require_once 'shared/conn_PDO.php';
 session_start();
 if (!isset($_SESSION['mem_id']) || $_SESSION['mem_id'] == '') {
-    header('Location: register.php');
+    header('Location: ?page=register');
 }
 /* [ mem_list content ] */
 $mem_id = $_SESSION['mem_id'];
@@ -86,11 +86,11 @@ try {
   </head>
   <body>
   <section class="order container-fluid no-any-pd">
-      <a href="index.php"><img src="LOGO/Concierge_1_white.svg" class="img-fluid"></a><h2>訂單填寫</h2>
+      <a href="./"><img src="LOGO/Concierge_1_white.svg" class="img-fluid"></a><h2>訂單填寫</h2>
       <div class="order-head">
       <span>會員：<?php echo $mem_name; ?></span>
       <span>帳號：<?php echo $mem_mail; ?></span>
-      <a href="member_logout.php" class="logout-submit">登出</a>
+      <a href="?page=member_logout" class="logout-submit">登出</a>
       </div>
   </section>
   <section class="container">
@@ -108,12 +108,12 @@ try {
         </div>
         <div class="col-lg-3">
         <p>購物證明</p>
-          <form enctype="multipart/form-data" method="POST" action="order_process.php" id="order_file_form">
+          <form enctype="multipart/form-data" method="POST" action="?page=order_process" id="order_file_form">
           <div class="custom-file">
             <input type="file" class="custom-file-input" id="fileUpload" name="order_pic">
-            <label class="custom-file-label" for="fileUpload" style="overflow: hidden;">選擇檔案</label>
+            <label class="custom-file-label" style="overflow: hidden;">選擇檔案</label>
           </div>
-          <input type="hidden" class="hidden-order-id" name="order_id" value="">
+          <input class="hidden-order-id" for="fileUpload" name="order_id" value="">
           </form>
           <div id="image-holder"></div>
         </div>
@@ -205,7 +205,7 @@ try {
   <div class="order-map" id="changingpicture"><img src="" id="Mymap">
   </div>
   <div class="order-btn pd-top pd-bottom">
-  <a href="member_index.php" type="submit" value="回上一頁">回上一頁</a>
+  <a href="?page=member_index" type="submit" value="回上一頁">回上一頁</a>
   <a href="javascript:;" id="sendbtn" type="submit" name="send" value="送出">送出</a>
   </div>
   </body>
@@ -389,7 +389,7 @@ try {
 
     $.ajax({
         type: 'post',
-        url: 'order_process.php',
+        url: '?page=order_process',
         data: addData,
         crossDomain: true,
       }).done(function(order_id) {

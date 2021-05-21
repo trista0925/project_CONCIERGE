@@ -33,15 +33,15 @@ $(document).ready(function() {
 
                 //使用AJAX技術取得外部mem_chk_member.php來處理判斷帳號-----------------------------
                 $.ajax({
-                    //呼叫 mem_chk_member.php 進來工作, 以POST方式傳入 chk_mail_val 變數的值
-                    url: 'member_chk_member.php',
+                    //呼叫 mem_chk_member.php進來工作, 以POST方式傳入 chk_mail_val 變數的值
+                    url: '?page=member_chk_member',
                     type: 'post',
                     data: {
                         mem_mail: chk_mail_val
                     }
 
                     //完成ajax的工作後, 執行以下function-------------------------------------------
-                }).done(function(msg) { //mem_chk_member.php完成工作會回傳值, 以 msg 收下回傳的值
+                }).done(function(msg) { //?page=mem_chk_member完成工作會回傳值, 以 msg 收下回傳的值
                     console.log('--------' + msg);
                     if (msg == 1) { //當收到的值==1, 表示資料庫中已有此帳號
                         $('#msg_mail').html('帳號已存在，不能使用');

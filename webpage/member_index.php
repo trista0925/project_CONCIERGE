@@ -7,7 +7,7 @@ if (isset($_SESSION['mem_id']) && $_SESSION['mem_id'] != '') {
     $mem_level = $_SESSION['mem_level'];
     // var_dump($mem_level);
 } else {
-    header('Location: register.php');
+    header('Location: ?page=register');
 }
 
 ?>
@@ -27,21 +27,21 @@ if (isset($_SESSION['mem_id']) && $_SESSION['mem_id'] != '') {
 
 <body class="member-index">
   <section class="container">
-    <div class="row py-lg-4 py-2">
-      <div class="col-lg-2 offset-lg-5 col-6 offset-3">
-        <a href="index.php"><img src="LOGO/Concierge_1_white.svg" class="img-fluid" alt=""></a>
+    <div class="row py-lg-4 py-2 justify-content-center">
+      <div class="col-lg-2 col-5">
+        <a href="./"><img src="LOGO/Concierge_1_white.svg" class="img-fluid" alt=""></a>
       </div>
     </div>
-    <div class="row align-items-center">
-      <div class="col-lg-3 offset-lg-3 col-6 offset-3">
-        <a id="order_list" href="order.php"><img src="images/order2-01.png" class="img-fluid" alt=""></a>
+    <div class="row flex-lg-row flex-column align-items-center">
+      <div class="col-lg-3 offset-lg-3 col-5">
+        <a id="order_list" href="?page=order"><img src="images/order2-01.png" class="img-fluid" alt=""></a>
       </div>
-      <div class="col-lg-3 offset-lg-0 col-6 offset-3">
-        <a id="order_list" href="member_list.php"><img src="images/order2-02.png" class="img-fluid" alt=""></a>
+      <div class="col-lg-3 col-5">
+        <a id="order_list" href="?page=member_list"><img src="images/order2-02.png" class="img-fluid" alt=""></a>
       </div>
-      <div class="col-lg-2 offset-lg-0 col-6 offset-3">
+      <div class="col-lg-2 col-5">
         <?php if ($mem_level >= 9) {?>
-        <a href="order_list.php" name="admin" value=""><img src="images/order2-03.png" class="img-fluid" alt=""></a>
+        <a href="?page=order_list" name="admin" value=""><img src="images/order2-03.png" class="img-fluid" alt=""></a>
         <?php }?>
       </div>
     </div>
@@ -50,8 +50,8 @@ if (isset($_SESSION['mem_id']) && $_SESSION['mem_id'] != '') {
         <span>會員: <?php echo $mem_name; ?></span>
         <span>帳號: <?php echo $mem_mail; ?></span>
         <br>
-        <a href="member_logout.php" class="logout-submit">登出</a>
-        <a href="index.php" class="back-btn" name="back" value="回上一頁">回上一頁</a>
+        <a href="?page=member_logout" class="logout-submit">登出</a>
+        <a href="./" class="back-btn" name="back" value="回上一頁">回上一頁</a>
       </div>
     </div>
   </section>

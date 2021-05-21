@@ -15,11 +15,11 @@
 
   <body style="overflow: hidden;">
   <section class="order-fin container-fluid no-any-pd wow animate__animated animate__fadeIn animate__slower">
-      <a href="index.php"><img src="LOGO/Concierge_1_white.svg" class="img-fluid"></a>
+      <a href="./"><img src="LOGO/Concierge_1_white.svg" class="img-fluid"></a>
       <div class="row order-fin-btn justify-content-center">
       <h3>註冊成功</h3>
       <h3>請重新登入</h3>
-      <a href="index.php" type="submit" value="">回首頁</a>
+      <a href="./" type="submit" value="">回首頁</a>
       </div>
   </section>
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" crossorigin="anonymous"></script>

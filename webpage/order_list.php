@@ -2,7 +2,7 @@
 require_once 'shared/conn_PDO.php';
 session_start();
 if (!isset($_SESSION['mem_id']) || $_SESSION['mem_id'] == '') {
-    header('Location: mem_index.php');
+    header('Location: ?page=mem_index');
 }
 
 $mem_mail = $_SESSION['mem_mail'];
@@ -16,7 +16,7 @@ try {
     $last_row = $first_row + $max_rows - 1; //目前頁面最後一筆的索引號碼
     $total_rows = 0; //總共的筆數
     $total_pages = 0; //總共的頁數
-    $page_file = 'admin_news'; //連結的頁面
+    $page_file = 'order_list&admin_news'; //連結的頁面
     /* [ $where ] */
     $where = '';
 
@@ -78,9 +78,9 @@ try {
     <div class="row">
       <div class="col-lg-4 order-lg-1 order-2 order-list-left">
         <div class="order-list-menu">
-        <a href="index.php"> <img src="LOGO/Concierge_1_white.svg" class="img-fluid p-3 my-2"></a>
-        <a href="order_list.php"><img src="images/Concierge_order_list.png" class="img-fluid my-2"></a>
-        <a href="store_list.php"><img src="images/Concierge_order_list01.png" class="img-fluid my-2"></a>
+        <a href="./"> <img src="LOGO/Concierge_1_white.svg" class="img-fluid p-3 my-2"></a>
+        <a href="?page=order_list"><img src="images/Concierge_order_list.png" class="img-fluid my-2"></a>
+        <a href="?page=store_list"><img src="images/Concierge_order_list01.png" class="img-fluid my-2"></a>
         </div>
       </div>
       <!--"右側會員訂單管理內容區塊-->
@@ -90,7 +90,7 @@ try {
         <!--"管理者"（登入身份）須由後端帶入-->
         <div class="order-list-admin">
         <span>管理者：<?php if ($mem_mail) {echo $mem_mail;}?></span>
-        <a href="member_logout.php" class="logout-submit">登出</a>
+        <a href="?page=member_logout" class="logout-submit">登出</a>
         </div>
         </div>
         <!--訂單顯示table區-->
@@ -99,7 +99,7 @@ try {
               <th>訂單編號</th>
               <th>會員姓名</th>
               <th>取件店家名稱</th>
-              <th></th>
+              <th width="30%"></th>
             </thead>
             <tbody>
               <?php foreach ($order_list as $key => $item) {?>
@@ -107,7 +107,7 @@ try {
                   <td><?php echo $item['order_id'] ?></td>
                   <td><?php echo $item['order_name'] ?></td>
                   <td><?php echo $item['order_store_name'] ?></td>
-                  <td><div class="order-btn"><a href="javascript:;" type="submit" value="訂單內容" onclick="orderModal('<?php echo $key ?>')">訂單內容</a></div></td>
+                  <td width="30%"><div class="order-btn"><a href="javascript:;" type="submit" value="訂單內容" onclick="orderModal('<?php echo $key ?>')">訂單內容</a></div></td>
                 </tr>
                 <?php }?>
             </tbody>
@@ -137,7 +137,7 @@ if ($curr_page < $total_pages - 1) {
 }?>
           </ul>
           <div class="order-btn pt-4">
-            <a href="member_index.php" type="submit" value="回上一頁">回上一頁</a>
+            <a href="?page=member_index" type="submit" value="回上一頁">回上一頁</a>
           </div>
         </div>
       </div>
@@ -151,7 +151,7 @@ if ($curr_page < $total_pages - 1) {
             <h1>訂單編號 <span class="order-id"></span></h1>
         </div>
         <div class="row justify-content-center">
-          <div class="col-lg-5">
+          <div class="col-lg-6 offset-lg-1">
             <p>填單時間：</p><span class="order-time-buy"></span>
             <br>
             <p>會員姓名：</p><span class="order-name"></span>
@@ -192,7 +192,7 @@ console.log(RT.content)
         'store-name', 'size', 'time-buy', 'time-get', 'time-arrive',
         'memo'],
         sqlFld = elData.map((d,i)=>d.replace(/\-/g,"_"));
-    var picUrl = `ref/order_pic/${RT.content[id]['order_pic']}.jpg`
+    var picUrl = `ref/order_pic/${RT.content[id]['order_pic']}`
     elData.forEach((v,k) => {
       $(''+`.${setClass}-${elData[k]}`+'').text(
         RT.content[id][''+`${setClass}_${sqlFld[k]}`+'']);
@@ -212,6 +212,6 @@ console.log(RT.content)
   });
 </script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
 </body>
 </html>

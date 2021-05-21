@@ -19,12 +19,12 @@ require_once 'shared/conn_PDO.php';
 <section class="container">
   <div class="row py-lg-4">
     <div class="col-lg-2 offset-lg-5 col-6 offset-3">
-    <a href="index.php"><img src="LOGO/Concierge_1_white.svg" class="img-fluid" alt=""></a>
+    <a href="./"><img src="LOGO/Concierge_1_white.svg" class="img-fluid" alt=""></a>
     </div>
   </div>
   <div class="row">
     <div class="col-lg-4 offset-lg-4">
-      <form method="post" action="./mem_login_check.php">
+      <form method="post" action="?page=mem_login_check">
           <div class="login">
             <input type="text" name="mem_mail" class="form-control" required="required" value="" maxlength="20" placeholder="請輸入管理者email">
             <input type="text" name="mem_pwd" class="form-control" required="required" value="" maxlength="20" placeholder="請輸入管理者密碼">
@@ -38,7 +38,7 @@ if (isset($_GET['msg']) && $_GET['msg'] == 2) {echo '請登入管理員帳號';}
   </div>
 </section>
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
 </body>
 </html>

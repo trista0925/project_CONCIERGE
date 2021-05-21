@@ -200,6 +200,7 @@
             星期日 08:30–22:00</p>
         </div>
       </div>
+      <hr>
     </section>
   </div>
   <footer class="mt-auto pd-top pd-bottom sec-bg-color"></footer>

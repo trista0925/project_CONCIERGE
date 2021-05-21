@@ -2,7 +2,7 @@
 require_once 'shared/conn_PDO.php';
 session_start();
 if (!isset($_SESSION['mem_id']) || $_SESSION['mem_id'] == '') {
-    header('Location: register.php');
+    header('Location: ?page=register');
 }
 /* [ mem_list content ] */
 $mem_id = $_SESSION['mem_id'];
@@ -25,7 +25,7 @@ try {
     $last_row = $first_row + $max_rows - 1; //目前頁面最後一筆的索引號碼
     $total_rows = 0; //總共的筆數
     $total_pages = 0; //總共的頁數
-    $page_file = 'admin_news'; //連結的頁面
+    $page_file = 'member_list&admin_news'; //連結的頁面
     /* [ $where ] */
     $where = '';
 
@@ -95,12 +95,12 @@ try {
 </head>
 <body>
 <section class="member-list container-fluid">
-  <a href="index.php"><img src="LOGO/Concierge_1.svg" class="img-fluid"></a><h1>訂單查詢</h1>
+  <a href="./"><img src="LOGO/Concierge_1.svg" class="img-fluid"></a><h1>訂單查詢</h1>
       <div class="member-list-head">
      <!--"管理者"（登入身份）須由後端帶入-->
      <span>會員：<?php if ($mem_name) {echo $mem_name;}?></span>
      <span>帳號：<?php if ($mem_mail) {echo $mem_mail;}?></span>
-     <a href="member_logout.php" class="logout-submit" value="">登出</a>
+     <a href="?page=member_logout" class="logout-submit" value="">登出</a>
       </div>
   </section>
   <section class="container no-any-pd">
@@ -143,7 +143,7 @@ try {
 if ($curr_page > 0) {
     echo '<li><a href="?page=' . $page_file . '&curr_page=0"><i class="fa fa-angle-double-left"></i></a>';
     echo '<a href="?page=' . $page_file . '&curr_page=' . ($curr_page - 1) . '">
-              <i class="fa fa-angle-left"></i></a></li>';
+            <i class="fa fa-angle-left"></i></a></li>';
 }
 for ($i = 0; $i < $total_pages; $i++) {
     if ($i == $curr_page) {
@@ -156,13 +156,13 @@ for ($i = 0; $i < $total_pages; $i++) {
 } //for end
 if ($curr_page < $total_pages - 1) {
     echo '<li><a href="?page=' . $page_file . '&curr_page=' . ($curr_page + 1) . '">
-              <i class="fa fa-angle-right"></i></a></li>';
+            <i class="fa fa-angle-right"></i></a></li>';
     echo '<li><a href="?page=' . $page_file . '&curr_page=' . ($total_pages - 1) . '">
-              <i class="fa fa-angle-double-right"></i></a></li>';
+            <i class="fa fa-angle-double-right"></i></a></li>';
 }?>
         </ul>
         <div class="order-btn pd-top pd-bottom">
-        <a href="member_index.php" type="submit" value="回上一頁">回上一頁</a>
+        <a href="?page=member_index" type="submit" value="回上一頁">回上一頁</a>
       </div>
       </div>
   </section>

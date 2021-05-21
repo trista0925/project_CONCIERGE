@@ -14,10 +14,10 @@
   </head>
   <body style="overflow: hidden;">
   <section class="order-fin container-fluid no-any-pd wow animate__animated animate__fadeIn animate__slower">
-      <a href="index.php"><img src="LOGO/Concierge_1_white.svg" class="img-fluid"></a>
+      <a href="./"><img src="LOGO/Concierge_1_white.svg" class="img-fluid"></a>
       <div class="row order-fin-btn justify-content-center">
       <h3>完成訂單</h3>
-      <a href="member_list.php" type="submit" value="">回訂單管理</a>
+      <a href="?page=member_list" type="submit" value="">回訂單管理</a>
       </div>
   </section>
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" crossorigin="anonymous"></script>

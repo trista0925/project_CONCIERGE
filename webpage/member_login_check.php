@@ -33,10 +33,10 @@ try {
         $_SESSION['mem_level'] = $row['mem_level'];
         $_SESSION['mem_mail'] = $row['mem_mail'];
 
-        header('Location: member_index.php');
+        header('Location: ?page=member_index');
     } else {
         echo "ERROR";
-        header('Location: register.php?msg=1');
+        header('Location: ?page=register&msg=1');
     }
 
 } catch (PDOException $e) {

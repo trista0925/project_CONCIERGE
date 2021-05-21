@@ -8,7 +8,7 @@ try {
               FROM mem
               WHERE mem_mail  = :mem_mail
               AND   mem_pwd   = :mem_pwd
-              AND   mem_level >= 1";
+              AND   mem_level = 9";
     $stmt = $conn->prepare($sql_str);
 
     //接收資料===========================================
@@ -33,10 +33,10 @@ try {
         $_SESSION['mem_level'] = $row['mem_level'];
         $_SESSION['mem_mail'] = $row['mem_mail'];
 
-        header('Location: order_list.php');
+        header('Location: ?page=order_list');
     } else {
         echo "ERROR";
-        header('Location: mem_index.php?page&msg=1');
+        header('Location: ?page=mem_index&msg=1');
     }
 
 } catch (PDOException $e) {

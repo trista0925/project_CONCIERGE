@@ -104,7 +104,7 @@ CREATE TABLE `orderlist` (
   `order_time_arrive` datetime DEFAULT NULL,
   `order_time_get` datetime DEFAULT NULL,
   `order_time_buy` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
-  `order_pic` varchar(10) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `order_pic` varchar(20) COLLATE utf8_unicode_ci DEFAULT NULL,
   `order_memo` varchar(50) COLLATE utf8_unicode_ci DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
@@ -113,8 +113,7 @@ CREATE TABLE `orderlist` (
 --
 
 INSERT INTO `orderlist` (`order_id`, `order_mem_id`, `order_name`, `order_mail`, `order_store_id`, `order_store_name`, `order_phone`, `order_tele`, `order_size`, `order_time_arrive`, `order_time_get`, `order_time_buy`, `order_pic`, `order_memo`) VALUES
-(60, 1, '王小明', '999@gmail.com', 38, 'MOOD 木的生活 中山店', '0927756583', '0223334566', 'S型:50公分以下，20公斤以內', '2021-04-30 08:15:00', '2021-05-02 08:15:00', '2021-04-30 00:15:45', 'order_60', '請幫我放進冷凍庫'),
-(61, 1, '林小美', '999@gmail.com', 39, 'MOOD 木的生活 松山店', '0975627365', '034421567', 'M型:100公分以下，20公斤以內', '2021-04-28 08:32:00', '2021-05-07 08:32:00', '2021-04-30 00:32:56', 'order_61_s', '易碎物品請勿重壓');
+(1, 1, '王小明', '999@gmail.com', 1, 'MOOD 木的生活 中山店', '0927756583', '0223334566', 'S型:50公分以下，20公斤以內', '2021-04-30 08:15:00', '2021-05-02 08:15:00', '2021-04-30 00:15:45', 'order_1_s', '請幫我放進冷凍庫');
 
 -- --------------------------------------------------------
 
@@ -138,14 +137,24 @@ CREATE TABLE `store` (
 --
 
 INSERT INTO `store` (`store_id`, `store_name`, `store_area_id`, `store_phone`, `store_address`, `store_time_open`, `store_time_add`, `store_memo`) VALUES
-(38, 'MOOD 木的生活 中山店', 1, '0912345678', '台北市中山區錦州街215號', '09:30–17:00', '2021-02-18 07:45:57', ''),
-(39, 'MOOD 木的生活 松山店', 2, '0917653688', '台北市松山區南京東路三段248號', '10:30–22:00', '2021-02-18 08:29:23', ''),
-(40, '聽咕 TEAM GROUP 中山店', 1, '0911555555', '台北市中山區林森北路413號', '10:00–22:00', '2021-02-18 08:30:44', ''),
-(41, '聽咕 TEAM GROUP 信義店', 3, '0987654321', '台北市信義區信義路五段5號', '10:30–23:00', '2021-02-18 14:53:15', ''),
-(42, 'zoeywin_photo 中山店', 1, '0911245679', '台北市中山區長春路176號', '07:30–22:00', '2021-04-24 21:31:28', ''),
-(43, 'zoeywin_photo 信義店', 3, '0933256664', '台北市信義區仁愛路四段505號', '12:30–23:00', '2021-04-24 21:31:02', ''),
-(44, 'Le Caféisme 中山店', 1, '0911114333', '台北市中山區民權西路3號', '07:30–22:00', '2021-04-24 21:31:43', ''),
-(45, 'Le Caféisme 信義店', 3, '0933333333', 'Le Caféisme 信義店', '07:00–22:00', '2021-04-24 21:30:59', '');
+(1, 'MOOD 木的生活 中山店', 1, '0912345678', '台北市中山區錦州街215號', '09:30–17:00', '2021-05-22 00:00:00', ''),
+(2, 'MOOD 木的生活 松山店', 2, '0917653688', '台北市松山區南京東路三段248號', '09:30–22:00', '2021-05-22 00:00:00', ''),
+(3, 'MOOD 木的生活 信義區', 3, '0914575436', '台北市信義區松仁路28號B1', '08:30–22:00', '2021-05-22 00:00:00', ''),
+(4, 'MOOD 木的生活 文山店', 4, '0924626462', '台北市文山區興隆路三段111號', '07:30–22:00', '2021-05-22 00:00:00', ''),
+(5, 'MOOD 木的生活 士林區', 5, '0957245742', '台北市士林區承德路四段67號', '10:30–23:00', '2021-05-22 00:00:00', ''),
+(6, 'MOOD 木的生活 北投區', 6, '0917727940', '台北市北投區石牌路二段201號', '07:00–22:00', '2021-05-22 00:00:00', ''),
+(7, 'MOOD 木的生活 大安區', 7, '0919385920', '台北市大安區羅斯福路三段301號', '10:30–22:00', '2021-05-22 00:00:00', ''),
+(8, 'MOOD 木的生活 中正區', 8, '0942849869', '台北市中正區青島西路7號1樓', '08:30–22:00', '2021-05-22 00:00:00', ''),
+(9, 'MOOD 木的生活 萬華區', 9, '0918092840', '台北市萬華區武昌街二段77號', '10:30–22:00', '2021-05-22 00:00:00', ''),
+(10, 'MOOD 木的生活 南港區', 10, '0913839489', '台北市南港區忠孝東路七段371號B2', '07:00–22:00', '2021-05-22 00:00:00', ''),
+(11, 'MOOD 木的生活 大同區', 11, '0934081084', '台北市大同區保安街11號', '09:30–22:00', '2021-05-22 00:00:00', ''),
+(12, 'MOOD 木的生活 內湖區', 12, '0913849138', '台北市內湖區洲子街48號', '10:30–22:00', '2021-05-22 00:00:00', ''),
+(13, '聽咕 TEAM GROUP 中山店', 1, '0911555555', '台北市中山區林森北路413號', '12:00–22:00', '2021-05-22 00:00:00', ''),
+(14, '聽咕 TEAM GROUP 松山店', 2, '0987654321', '台北市松山區南京東路二段5號', '11:30–23:00', '2021-05-22 00:00:00', ''),
+(15, 'zoeywin_photo 中山店', 1, '0911245679', '台北市中山區長春路176號', '07:30–22:00', '2021-05-22 00:00:00', ''),
+(16, 'zoeywin_photo 信義店', 3, '0933256664', '台北市信義區仁愛路四段505號', '12:30–23:00', '2021-05-22 00:00:00', ''),
+(17, 'Le Caféisme 中山店', 1, '0911114333', '台北市中山區民權西路3號', '07:30–22:00', '2021-05-22 00:00:00', ''),
+(18, 'Le Caféisme 信義店', 3, '0933333333', 'Le Caféisme 信義店', '08:00–22:00', '2021-05-22 00:00:00', '');
 
 --
 -- 已匯出資料表的索引
@@ -189,27 +198,27 @@ ALTER TABLE `store`
 -- 使用資料表 AUTO_INCREMENT `area`
 --
 ALTER TABLE `area`
-  MODIFY `area_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `area_id` int(11) NOT NULL AUTO_INCREMENT;
 --
 -- 使用資料表 AUTO_INCREMENT `mb`
 --
 ALTER TABLE `mb`
-  MODIFY `mb_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `mb_id` int(11) NOT NULL AUTO_INCREMENT;
 --
 -- 使用資料表 AUTO_INCREMENT `mem`
 --
 ALTER TABLE `mem`
-  MODIFY `mem_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+  MODIFY `mem_id` int(11) NOT NULL AUTO_INCREMENT;
 --
 -- 使用資料表 AUTO_INCREMENT `orderlist`
 --
 ALTER TABLE `orderlist`
-  MODIFY `order_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=62;
+  MODIFY `order_id` int(11) NOT NULL AUTO_INCREMENT;
 --
 -- 使用資料表 AUTO_INCREMENT `store`
 --
 ALTER TABLE `store`
-  MODIFY `store_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=71;
+  MODIFY `store_id` int(11) NOT NULL AUTO_INCREMENT;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

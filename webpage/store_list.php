@@ -2,7 +2,7 @@
 require_once 'shared/conn_PDO.php';
 session_start();
 if (!isset($_SESSION['mem_id']) || $_SESSION['mem_id'] == '') {
-    header('Location: mem_index.php');
+    header('Location: ?page=mem_index');
 }
 
 $mem_mail = $_SESSION['mem_mail'];
@@ -17,7 +17,7 @@ try {
     $last_row = $first_row + $max_rows - 1; //目前頁面最後一筆的索引號碼
     $total_rows = 0; //總共的筆數
     $total_pages = 0; //總共的頁數
-    $page_file = 'admin_news'; //連結的頁面
+    $page_file = 'store_list&admin_news'; //連結的頁面
     /* [ $where ] */
     $where = '';
 
@@ -86,9 +86,9 @@ try {
     <div class="row">
       <div class="col-lg-4 order-lg-1 order-2 order-list-left">
         <div class="order-list-menu">
-        <a href="index.php"> <img src="LOGO/Concierge_1_white.svg" class="img-fluid p-3 my-2"></a>
-        <a href="order_list.php"><img src="images/Concierge_order_list.png" class="img-fluid my-2"></a>
-        <a href="store_list.php"><img src="images/Concierge_order_list01.png" class="img-fluid my-2"></a>
+        <a href="./"> <img src="LOGO/Concierge_1_white.svg" class="img-fluid p-3 my-2"></a>
+        <a href="?page=order_list"><img src="images/Concierge_order_list.png" class="img-fluid my-2"></a>
+        <a href="?page=store_list"><img src="images/Concierge_order_list01.png" class="img-fluid my-2"></a>
         </div>
       </div>
       <!--"右側會員訂單管理內容區塊-->
@@ -98,7 +98,7 @@ try {
           <!--"管理者"（登入身份）須由後端帶入-->
           <div class="order-list-admin">
           <span>管理者：<?php if ($mem_mail) {echo $mem_mail;}?></span>
-          <a href="member_logout.php" class="logout-submit">登出</a>
+          <a href="?page=member_logout" class="logout-submit">登出</a>
           </div>
         </div>
       <!--訂單顯示table區-->
@@ -106,8 +106,8 @@ try {
           <thead class="table-primary">
             <th>店家編號</th>
             <th>店家名稱</th>
-            <th>店家地區分類</th>
-            <th><div class="add-btn"><a href="btn-mask" data-target="btn-mask" type="submit">新增店家</a></div></th>
+            <th>地區分類</th>
+            <th width="30%"><div class="add-btn"><a href="btn-mask" data-target="btn-mask" type="submit">新增店家</a></div></th>
           </thead>
           <tbody>
             <?php foreach ($store_list as $key => $item) {?>
@@ -115,7 +115,7 @@ try {
               <td><?php echo $item['store_id'] ?></td>
               <td><?php echo $item['store_name'] ?></td>
               <td><?php echo $area_list[$item['store_area_id']] ?></td>
-              <td>
+              <td width="30%">
               <div class="look-btn"><a href="javascript:;" type="submit" onclick="addModal('<?php echo $key ?>')">查看</a></div>
               <div class="edit-btn"><a href="javascript:;" type="submit" onclick="editModal('<?php echo $key ?>')">編輯</a></div>
               <div class="delete-btn"><a href="javascript:;" type="submit" onclick="delStore('<?php echo $key ?>')">刪除</a></div>
@@ -149,7 +149,7 @@ if ($curr_page < $total_pages - 1) {
 }?>
           </ul>
          <div class="order-btn pt-4">
-            <a href="member_index.php" type="submit" name="back" value="回上一頁">回上一頁</a>
+            <a href="?page=member_index" type="submit" name="back" value="回上一頁">回上一頁</a>
           </div>
         </div>
       </div>
@@ -206,7 +206,6 @@ if ($curr_page < $total_pages - 1) {
       <div class="mask-content pt-lg-5 pb-lg-4 pt-3">
         <h1>【編輯】店家資訊</h1>
       </div>
-
       <div class="row justify-content-center">
         <div class="col-lg-4">
           <p>店家名稱 編號：<span class="edit-store-id"></p><input type="text" name="store_name" class="form-control edit-store-name" value="" placeholder="輸入店家名稱" required>
@@ -226,6 +225,7 @@ if ($curr_page < $total_pages - 1) {
     </div>
     <!-- 隱藏區塊-刪除 -->
     <div class="del-mask">
+    <i class="fa fa-times fa-2x" aria-hidden="true"></i>
       <div class="mask-content pt-lg-5 pb-lg-2 pt-3">
         <h3>是否要刪除此筆店家資料</h3>
       </div>
@@ -320,7 +320,7 @@ if ($curr_page < $total_pages - 1) {
     addData['this_url'] = thisUrl
     console.log(addData)
     $.post({
-      url: 'store_process.php',
+      url: '?page=store_process',
       data: addData,
       crossDomain: true,
     }).done(function(res) {
@@ -349,7 +349,7 @@ if ($curr_page < $total_pages - 1) {
     addData['this_url'] = thisUrl
     console.log(addData)
     $.post({
-      url: 'store_process.php',
+      url: '?page=store_process',
       data: addData,
       crossDomain: true,
     }).done(function(res) {
@@ -373,7 +373,7 @@ if ($curr_page < $total_pages - 1) {
     addData['this_url'] = thisUrl
     // console.log(addData)
     $.post({
-      url: 'store_process.php',
+      url: '?page=store_process',
       data: addData,
       crossDomain: true,
     }).done(function(res) {

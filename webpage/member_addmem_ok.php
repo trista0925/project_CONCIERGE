@@ -30,7 +30,7 @@ if (isset($_POST['process']) && $_POST['process'] == 'addmem') {
         //如果$result2不等於1, 表示發信不成功, 那麼$msg就等於0
         if ($result2 != 1) {$msg = 0;}
 
-        header('Location:?page&msg=' . $msg . '&r=' . $result2);
+        header('Location:?page=registerfinish&msg=' . $msg . '&r=' . $result2);
 
     } catch (PDOException $e) {
         die("Errpr!: 註冊失敗......" . $e->getMessage());
@@ -38,7 +38,7 @@ if (isset($_POST['process']) && $_POST['process'] == 'addmem') {
 }
 //如果接收到msg的訊息是1時, 表示註冊成功, 發信也成功了
 if (isset($_GET['msg']) && $_GET['msg'] == 1) {
-    header('Location: registerfinish.php');
+    header('Location: ?page=registerfinish');
 }
 
 //如果接收到msg的訊息是0時, 表示註冊成功, 但發信失敗了

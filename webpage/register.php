@@ -22,7 +22,7 @@ if (isset($_GET['mailok']) && $_GET['mailok'] == 1) {
 
         //執行==============================================
         $stmt->execute();
-        header('Location:register.php');
+        header('Location:?page=register');
     } catch (PDOException $e) {
         die("Errpr!: " . $e->getMessage());
     }
@@ -34,7 +34,7 @@ if (isset($_GET['msg']) && $_GET['msg'] != '') {
     $error = $_GET['msg'];
 }
 if (isset($_SESSION['mem_id']) && $_SESSION['mem_id'] != '') {
-    header('Location: member_index.php');
+    header('Location: ?page=member_index');
 }
 ?>
 <!DOCTYPE html>
@@ -56,10 +56,10 @@ if (isset($_SESSION['mem_id']) && $_SESSION['mem_id'] != '') {
     <div class="row">
       <div class="col-lg-5 d-none d-sm-none d-lg-block register-leftpic"></div>
       <div class="col-lg-7 register no-any-pd">
-        <div class="register-logo"><a href="index.php"><img src="LOGO/Concierge_1_white.svg" class="img-fluid"></a>
+        <div class="register-logo"><a href="./"><img src="LOGO/Concierge_1_white.svg" class="img-fluid"></a>
         </div>
           <h3 class="pt-lg-4 pt-3 text-center">會員登入 Sign in</h3>
-          <form method="post" class="pb-lg-3 pb-1" action="member_login_check.php">
+          <form method="post" class="pb-lg-3 pb-1" action="?page=member_login_check">
           <input name="mem_mail" id="userID" type="email" required="required" value="" maxlength="50" placeholder="Email / Account 會員帳號">
           <input name="mem_pwd" id="userpw" type="password" required value="" maxlength="20" placeholder="Password 會員密碼">
           <p class="errmsg-register"><?php
@@ -68,7 +68,7 @@ if (isset($_GET['msg']) && $_GET['msg'] == 2) {echo 'Email尚未驗證，請至�
           <input type="submit" name="loginbtn" class="loginbtn" value="登入">
           </form>
           <h3 class="pt-lg-3 pt-1 text-center">註冊會員 Register</h3>
-          <form method="post" class="pb-lg-4 pb-3" action="member_addmem_ok.php">
+          <form method="post" class="pb-lg-4 pb-3" action="?page=member_addmem_ok">
           <input name="mem_mail" id="mem_mail" class="mem_mail" type="email" required="required" value="" maxlength="50" placeholder="Email Address 電子信箱">
           <div id="msg_mail" class="msg_mail"></div>
           <input name="mem_name" id="addName" class="" type="text" value="" maxlength="30" placeholder="Name 會員名稱">
@@ -79,7 +79,7 @@ if (isset($_GET['msg']) && $_GET['msg'] == 2) {echo 'Email尚未驗證，請至�
           <input type="hidden" name="process" value="addmem">
           <input type="submit" name="Registerbtn" class="Registerbtn" value="註冊">
           </form>
-          <a href="index.php" class="back-btn" name="back" value="回上一頁">回上一頁</a>
+          <a href="./" class="back-btn" name="back" value="回上一頁">回上一頁</a>
       </div>
     </div>
   </section>

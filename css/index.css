@@ -22,7 +22,7 @@
       }
       
       a {
-          text-decoration: none;
+          appearance: none;
           color: #333333;
           cursor: pointer;
       }
@@ -276,7 +276,7 @@
           width: 60%;
           height: 30px;
           border-radius: 10px;
-          padding: 10px;
+          padding: 0 10px;
           margin: 10px auto;
           border: #8b8b8b 1px solid;
           font-size: 0.85rem;
@@ -321,11 +321,9 @@
       .member-index {
           margin: auto;
           display: flex;
-          justify-content: center;
           align-items: center;
           height: 100vh;
           background-color: #005F69;
-          overflow: hidden;
       }
       
       .send-btn {
@@ -421,6 +419,10 @@
       .order-image {
           width: 300px;
       }
+      
+      .hidden-order-id {
+          display: none;
+      }
       /* 店家地圖 */
       /* 桌機 */
       
@@ -474,13 +476,17 @@
       }
       
       .order-btn a {
+          -webkit-appearance: none;
+          -moz-appearance: none;
+          appearance: none;
           width: 100px;
-          height: 35px;
-          line-height: 35px;
+          padding: 5px 10px;
+          border: none;
           border-radius: 50px;
           background-color: #005F69;
           color: #ECECEC;
           font-size: 0.9rem;
+          outline: none;
       }
       
       .order-btn a:hover {
@@ -557,10 +563,13 @@
       }
       
       .order-fin-btn a {
+          -webkit-appearance: none;
+          -moz-appearance: none;
+          appearance: none;
           text-align: center;
-          width: 100px;
-          height: 35px;
-          line-height: 35px;
+          width: 120px;
+          padding: 5px 10px;
+          border: none;
           border-radius: 50px;
           background-color: #005F69;
           color: #ECECEC;
@@ -874,13 +883,24 @@
           text-align: center;
           display: inline;
       }
+      /* 手機 */
+      
+      @media(max-width: 1024px) {
+          .look-btn,
+          .edit-btn,
+          .delete-btn {
+              display: block;
+          }
+      }
       
       .look-btn a,
       .edit-btn a,
       .delete-btn a {
+          -webkit-appearance: none;
+          -moz-appearance: none;
+          appearance: none;
           width: 60px;
-          height: 35px;
-          line-height: 35px;
+          padding: 5px 10px;
           border-radius: 50px;
           background-color: #005F69;
           color: #ECECEC;
@@ -898,9 +918,11 @@
       }
       
       .add-btn a {
+          -webkit-appearance: none;
+          -moz-appearance: none;
+          appearance: none;
           width: 90px;
-          height: 35px;
-          line-height: 35px;
+          padding: 5px 10px;
           border-radius: 50px;
           background-color: #cbe4e6;
           color: #478187;
@@ -916,9 +938,11 @@
       }
       
       .del-y-btn a {
+          -webkit-appearance: none;
+          -moz-appearance: none;
+          appearance: none;
           width: 60px;
-          height: 35px;
-          line-height: 35px;
+          padding: 5px 10px;
           border-radius: 50px;
           background-color: #005F69;
           color: #ECECEC;
@@ -935,9 +959,11 @@
       }
       
       .del-n-btn a {
+          -webkit-appearance: none;
+          -moz-appearance: none;
+          appearance: none;
           width: 60px;
-          height: 35px;
-          line-height: 35px;
+          padding: 5px 10px;
           border-radius: 50px;
           background-color: #cbe4e6;
           color: #478187;
@@ -955,8 +981,7 @@
       
       .submit {
           width: 110px;
-          height: 35px;
-          line-height: 35px;
+          padding: 5px;
           border-radius: 50px;
           background-color: #005F69;
           color: #ECECEC;
