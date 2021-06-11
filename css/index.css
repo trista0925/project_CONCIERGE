@@ -176,7 +176,6 @@
       .btn-primary {
           background-color: #005F69 !important;
           border-color: #005F69 !important;
-          z-index: 9999;
       }
       
       .btn-primary:hover,

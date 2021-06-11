@@ -10,7 +10,7 @@ require_once 'shared/conn_PDO.php';
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <meta charset="UTF-8">
   <title>行動管理員後台 CONCIERGE｜登入</title>
-  <link rel="icon" href="LOGO/Concierge_icon.ico">
+  <link rel="icon" href="./images/logo/Concierge_icon.ico">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
   <link rel="stylesheet" href="css/index.css">
 </head>
@@ -19,7 +19,7 @@ require_once 'shared/conn_PDO.php';
 <section class="container">
   <div class="row py-lg-4">
     <div class="col-lg-2 offset-lg-5 col-6 offset-3">
-    <a href="./"><img src="LOGO/Concierge_1_white.svg" class="img-fluid" alt=""></a>
+    <a href="./"><img src="images/logo/Concierge_1_white.svg" class="img-fluid" alt=""></a>
     </div>
   </div>
   <div class="row">

@@ -45,7 +45,7 @@ if (isset($_SESSION['mem_id']) && $_SESSION['mem_id'] != '') {
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <meta charset="UTF-8">
   <title>行動管理員 CONCIERGE｜會員登入 / 註冊</title>
-  <link rel="icon" href="LOGO/Concierge_icon.ico">
+  <link rel="icon" href="./images/logo/Concierge_icon.ico">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
   <link rel="stylesheet" href="css/index.css">
   <link rel="stylesheet" href="css/animate.css">
@@ -56,7 +56,7 @@ if (isset($_SESSION['mem_id']) && $_SESSION['mem_id'] != '') {
     <div class="row">
       <div class="col-lg-5 d-none d-sm-none d-lg-block register-leftpic"></div>
       <div class="col-lg-7 register no-any-pd">
-        <div class="register-logo"><a href="./"><img src="LOGO/Concierge_1_white.svg" class="img-fluid"></a>
+        <div class="register-logo"><a href="./"><img src="images/logo/Concierge_1_white.svg" class="img-fluid"></a>
         </div>
           <h3 class="pt-lg-4 pt-3 text-center">會員登入 Sign in</h3>
           <form method="post" class="pb-lg-3 pb-1" action="?page=member_login_check">

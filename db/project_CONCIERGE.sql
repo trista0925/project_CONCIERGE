@@ -83,7 +83,8 @@ CREATE TABLE `mem` (
 
 INSERT INTO `mem` (`mem_id`, `mem_name`, `mem_mail`, `mem_pwd`, `mem_level`, `mem_chkcode`) VALUES
 (1, '999', '999@gmail.com', '999', 9, NULL),
-(2, '001', '001@gmail.com', '001', 1, NULL);
+(2, 'guest001', '001@gmail.com', '001', 1, NULL);
+(2, 'guest002', '002@gmail.com', '002', 2, NULL);
 
 -- --------------------------------------------------------
 

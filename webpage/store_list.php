@@ -74,7 +74,7 @@ try {
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <meta charset="UTF-8">
   <title>行動管理員後台 CONCIERGE｜店家管理</title>
-  <link rel="icon" href="LOGO/Concierge_icon.ico">
+  <link rel="icon" href="./images/logo/Concierge_icon.ico">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
   <link href="css/font-awesome-4.7.0/css/font-awesome.min.css" rel="stylesheet">
   <link href="css/index.css" rel="stylesheet">
@@ -86,7 +86,7 @@ try {
     <div class="row">
       <div class="col-lg-4 order-lg-1 order-2 order-list-left">
         <div class="order-list-menu">
-        <a href="./"> <img src="LOGO/Concierge_1_white.svg" class="img-fluid p-3 my-2"></a>
+        <a href="./"> <img src="images/logo/Concierge_1_white.svg" class="img-fluid p-3 my-2"></a>
         <a href="?page=order_list"><img src="images/Concierge_order_list.png" class="img-fluid my-2"></a>
         <a href="?page=store_list"><img src="images/Concierge_order_list01.png" class="img-fluid my-2"></a>
         </div>
@@ -236,11 +236,6 @@ if ($curr_page < $total_pages - 1) {
     </div>
   </section>
 <script src="js/jquery-3.5.1.min.js"></script>
-<script>
-  RT = {}
-  RT.content = <?php echo json_encode($rt_content) ?> || {}
-  console.log(RT.content)
-</script>
 <script>
   const storeDataName = ['id', 'name', 'mail', 'phone', 'area-id', 'address', 'time-open', 'memo'];
   const storeSQLName = storeDataName.map((d,i)=>d.replace(/\-/g,"_"));

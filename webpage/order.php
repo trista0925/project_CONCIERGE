@@ -78,7 +78,7 @@ try {
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta charset="UTF-8">
     <title>行動管理員 CONCIERGE｜訂單填寫</title>
-    <link rel="icon" href="LOGO/Concierge_icon.ico">
+    <link rel="icon" href="./images/logo/Concierge_icon.ico">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
      crossorigin="anonymous">
     <link rel="stylesheet" href="css/index.css">
@@ -86,7 +86,7 @@ try {
   </head>
   <body>
   <section class="order container-fluid no-any-pd">
-      <a href="./"><img src="LOGO/Concierge_1_white.svg" class="img-fluid"></a><h2>訂單填寫</h2>
+      <a href="./"><img src="images/logo/Concierge_1_white.svg" class="img-fluid"></a><h2>訂單填寫</h2>
       <div class="order-head">
       <span>會員：<?php echo $mem_name; ?></span>
       <span>帳號：<?php echo $mem_mail; ?></span>
@@ -184,7 +184,7 @@ try {
           </div>
           <div class="modal-body">
             <div class="order-shop-logo">
-              <img src="LOGO/Concierge_1_white.svg" class="img-fluid">
+              <img src="images/logo/Concierge_1_white.svg" class="img-fluid">
               <span>確認店家資訊</span>
             </div>
             <div class="order-shop-info">
@@ -238,7 +238,7 @@ try {
   function renderAreaOption(el) {
     var areaObj = RT.content['area_list'] || {}
     var areaList = ['請選擇地區']
-    Object.values(areaObj).forEach((v,k) => { areaList.splice(k+1, 0, v)})
+    Object.values(areaObj).forEach((v,k) => {areaList.splice(k+1, 0, v)})
     $.each(areaList, function(i, val) {
           $(el).append($( `<option value=${i}>${val}</option>` ));
     });

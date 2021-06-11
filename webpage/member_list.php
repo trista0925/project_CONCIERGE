@@ -88,14 +88,14 @@ try {
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <meta charset="UTF-8">
   <title>行動管理員 CONCIERGE｜訂單查詢</title>
-  <link rel="icon" href="LOGO/Concierge_icon.ico">
+  <link rel="icon" href="./images/logo/Concierge_icon.ico">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
   <link href="css/font-awesome-4.7.0/css/font-awesome.min.css" rel="stylesheet">
   <link rel="stylesheet" href="css/index.css">
 </head>
 <body>
 <section class="member-list container-fluid">
-  <a href="./"><img src="LOGO/Concierge_1.svg" class="img-fluid"></a><h1>訂單查詢</h1>
+  <a href="./"><img src="images/logo/Concierge_1.svg" class="img-fluid"></a><h1>訂單查詢</h1>
       <div class="member-list-head">
      <!--"管理者"（登入身份）須由後端帶入-->
      <span>會員：<?php if ($mem_name) {echo $mem_name;}?></span>

@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta charset="UTF-8">
     <title>行動管理員 CONCIERGE｜完成註冊</title>
-    <link rel="icon" href="LOGO/Concierge_icon.ico">
+    <link rel="icon" href="./images/logo/Concierge_icon.ico">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
     crossorigin="anonymous">
     <link rel="stylesheet" href="css/index.css">
@@ -15,7 +15,7 @@
 
   <body style="overflow: hidden;">
   <section class="order-fin container-fluid no-any-pd wow animate__animated animate__fadeIn animate__slower">
-      <a href="./"><img src="LOGO/Concierge_1_white.svg" class="img-fluid"></a>
+      <a href="./"><img src="images/logo/Concierge_1_white.svg" class="img-fluid"></a>
       <div class="row order-fin-btn justify-content-center">
       <h3>註冊成功</h3>
       <h3>請重新登入</h3>
