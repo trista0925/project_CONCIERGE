@@ -173,6 +173,10 @@
           margin: -35px;
       }
       
+      .btnset-index a {
+          z-index: 9999;
+      }
+      
       .btn-primary {
           background-color: #005F69 !important;
           border-color: #005F69 !important;
