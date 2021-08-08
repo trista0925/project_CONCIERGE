@@ -1,10 +1,11 @@
       /* all page ===================================== */
       
+      @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100;300;400;500;700;900&family=Saira+Condensed:wght@100;200;300;400;500;600;700;800;900&display=swap');
       * {
           margin: 0;
           padding: 0;
           box-sizing: border-box;
-          font-family: 'Righteous', 'Noto Sans TC', sans-serif;
+          font-family: 'Saira Condensed', 'Noto Sans TC', sans-serif;
       }
       
       html,

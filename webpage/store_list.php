@@ -237,6 +237,11 @@ if ($curr_page < $total_pages - 1) {
   </section>
 <script src="js/jquery-3.5.1.min.js"></script>
 <script>
+  RT = {}
+  RT.content = <?php echo json_encode($rt_content) ?> || {}
+  console.log(RT.content)
+</script>
+<script>
   const storeDataName = ['id', 'name', 'mail', 'phone', 'area-id', 'address', 'time-open', 'memo'];
   const storeSQLName = storeDataName.map((d,i)=>d.replace(/\-/g,"_"));
   const thisUrl = RT.content['PHP_SELF']+'?'+RT.content['QUERY_STRING']
